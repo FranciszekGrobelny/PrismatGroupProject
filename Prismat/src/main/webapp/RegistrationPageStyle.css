@@ -8,7 +8,7 @@ background-attachment: fixed;
 }
 #registrationStyle
 {
-	color: white;
+	color: #E9E6E5;
 	background-color: #353535;
 	width: 400px ;
 	height: 450px ;
@@ -31,4 +31,6 @@ input
 {
 float: right;
 margin: 0 10 0 10px;
+background-color: #343333;
+color: #d6cccb;
 }

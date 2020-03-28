@@ -10,7 +10,7 @@ public class StartPageController {
     public String loginPage(){
         return "log.html";
     }
-    @GetMapping("/RegistrationPageAction")
+    @GetMapping("/registrationPageAction")
     public String registrationPage()
     {
         return "RegistrationPage.html";
