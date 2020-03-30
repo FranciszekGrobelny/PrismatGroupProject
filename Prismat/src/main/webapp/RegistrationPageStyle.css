@@ -1,0 +1,44 @@
+body
+{
+background-attachment: fixed;
+	background-color: #3B3B36;
+	font-size: 20px;
+	color: #FFFFFF;
+	font-family: 'Lato';
+}
+#registrationStyle
+{
+	color: #E9E6E5;
+	background-color: #353535;
+	width: 400px ;
+	height: 450px ;
+	padding: 50px;
+	margin: 150px auto;
+	text-align: center;
+}
+.registrationButton
+{
+width: 100%;
+  background-color: #AE60B6;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input
+{
+    float: right;
+    margin: 0 10 0 10px;
+    background-color: #343333;
+    color: #d6cccb;
+}
+#loginInput
+{
+    border-radius: 15px 50px 30px;
+    border: 2px solid #609;
+    padding: 20px;
+    width: 200px;
+    height: 15px;
+}
