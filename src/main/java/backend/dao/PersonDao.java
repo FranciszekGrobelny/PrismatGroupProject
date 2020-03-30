@@ -30,7 +30,7 @@ public class PersonDao {
 
     public Person create(Person person) {
 
-        try (PreparedStatement insertStatement = dao.Connect().prepareStatement(CREATE_PERSON_QUERY,
+        try (PreparedStatement insertStatement = dao.connect().prepareStatement(CREATE_PERSON_QUERY,
                      PreparedStatement.RETURN_GENERATED_KEYS)) {
             insertStatement.setString(1, person.getLogin());
             insertStatement.setString(2, person.getPassword());
@@ -60,7 +60,7 @@ public class PersonDao {
 
     public Person read(Integer personId) {
 
-        try (PreparedStatement statement = dao.Connect().prepareStatement(READ_PERSON_QUERY)) {
+        try (PreparedStatement statement = dao.connect().prepareStatement(READ_PERSON_QUERY)) {
             statement.setInt(1, personId);
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
@@ -81,7 +81,7 @@ public class PersonDao {
     }
 
     public void update(Person person) {
-        try (PreparedStatement statement = dao.Connect().prepareStatement(UPDATE_PERSON_QUERY)) {
+        try (PreparedStatement statement = dao.connect().prepareStatement(UPDATE_PERSON_QUERY)) {
             statement.setInt(6, person.getId());
             statement.setString(1, person.getLogin());
             statement.setString(2, person.getPassword());
@@ -96,7 +96,7 @@ public class PersonDao {
     }
 
     public void delete(Integer personId) {
-        try (PreparedStatement statement = dao.Connect().prepareStatement(DELETE_PERSON_QUERY)) {
+        try (PreparedStatement statement = dao.connect().prepareStatement(DELETE_PERSON_QUERY)) {
             statement.setInt(1, personId);
             statement.executeUpdate();
 

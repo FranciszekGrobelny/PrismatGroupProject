@@ -8,7 +8,7 @@ public class DbConnectorService {
 
     public DbConnectorService(){}
 
-    public static Connection Connect(){
+    public static Connection connect(){
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -25,6 +25,6 @@ public class DbConnectorService {
             System.out.println(e.getMessage());
         }
 
-        return Connect();
+        return connect();
     }
 }
