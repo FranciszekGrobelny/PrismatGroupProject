@@ -29,8 +29,16 @@ width: 100%;
 }
 input
 {
-float: right;
-margin: 0 10 0 10px;
-background-color: #343333;
-color: #d6cccb;
+    float: right;
+    margin: 0 10 0 10px;
+    background-color: #343333;
+    color: #d6cccb;
+}
+#loginInput
+{
+    border-radius: 15px 50px 30px;
+    border: 2px solid #609;
+    padding: 20px;
+    width: 200px;
+    height: 15px;
 }

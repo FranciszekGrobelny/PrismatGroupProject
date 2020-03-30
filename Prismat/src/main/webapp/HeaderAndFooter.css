@@ -1,0 +1,46 @@
+body
+{
+  background-attachment: fixed;
+  	background-color: #3B3B36;
+    margin: 0px;
+    padding: 0px;
+}
+header
+{
+background: #363630;
+height: 70px;
+}
+.left-corner
+{
+    float: left;
+}
+.right-corner li
+{
+    margin: 20px;
+    display: inline-block;
+}
+.right-corner
+{
+    float: right;
+}
+ul li
+{
+    list-style-type: none;
+}
+a
+{
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+
+}
+footer
+{
+    clear: both;
+    text-align: center;
+    background: #363630;
+    margin-top: 50px;
+    padding: 10px;
+    font-size: 15px;
+    color: #fff;
+}
