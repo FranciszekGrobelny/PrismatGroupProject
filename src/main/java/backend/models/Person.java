@@ -7,20 +7,14 @@ public class Person {
     private String password;
     private String email;
     private String anotherEmail;
+    private boolean permission;
 
-    public Person(){}
-
-    public Person(String login, String password, String email){
-        this.login = login;
-        this.password = password;
-        this.email = email;
-    }
-
-    public Person(String login, String password, String email, String anotherEmail) {
+    public Person(String login, String password, String email, String anotherEmail, boolean permission) {
         this.login = login;
         this.password = password;
         this.email = email;
         this.anotherEmail = anotherEmail;
+        this.permission = permission;
     }
 
     public int getId() {
@@ -63,6 +57,14 @@ public class Person {
         this.anotherEmail = anotherEmail;
     }
 
+    public boolean getPermission() {
+        return permission;
+    }
+
+    public void setPermission(boolean permission){
+        this.permission = permission;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -70,6 +72,7 @@ public class Person {
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", anotherEmail='" + anotherEmail + '\'' +
+                ", anotherEmail='" + permission + '\'' +
                 '}';
     }
 }

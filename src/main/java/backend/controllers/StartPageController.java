@@ -16,6 +16,8 @@ import java.net.http.HttpResponse;
 @Controller
 public class StartPageController {
 
+    private Person person;
+
     @GetMapping("/login")
     public String loginPage(){
         return "log.jsp";
@@ -26,18 +28,14 @@ public class StartPageController {
 
     @PostMapping("/rejestration")
     @ResponseBody
-    public String userRejestration(@RequestParam("login") String login,
-                                   @RequestParam("password") String password,
-                                   @RequestParam("email") String email,
+    public String userRejestration(@RequestParam(value = "login", required = true) String login,
+                                   @RequestParam(value = "password", required = true) String password,
+                                   @RequestParam(value = "email", required = true) String email,
                                    @RequestParam(value = "anotherEmail", required = false) String anotherEmail,
+                                   @RequestParam("permission") boolean permission,
                                    HttpServletResponse response) throws IOException {
 
-        Person person;
-        if(anotherEmail != null){
-            person = new Person(login, password, email, anotherEmail);
-        }else{
-            person = new Person(login, password, email);
-        }
+        person = new Person(login, password, email, anotherEmail, permission);
 
         //tu bedzie PersonDao wysylajace dane bazy
         PersonDao personDao = new PersonDao();

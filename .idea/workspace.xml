@@ -7,49 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6ac68ed-36f6-455b-9ce0-bfd1ad927e67" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prismat.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backend/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backend/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backend/controllers/StartPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backend/dao/PersonDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backend/exeptions/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backend/models/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/backend/utils/DbUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/log.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/WEB-INF/classes/META-INF/Prismat.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/WEB-INF/classes/backend/AppConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/WEB-INF/classes/backend/AppInitializer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/WEB-INF/classes/backend/controllers/StartPageController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/WEB-INF/lib/jstl-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/WEB-INF/lib/logback-classic-1.2.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/WEB-INF/lib/logback-core-1.2.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/WEB-INF/lib/slf4j-api-1.7.25.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/WEB-INF/lib/spring-aop-5.1.14.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/WEB-INF/lib/spring-beans-5.1.14.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/WEB-INF/lib/spring-context-5.1.14.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/WEB-INF/lib/spring-core-5.1.14.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/WEB-INF/lib/spring-expression-5.1.14.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/WEB-INF/lib/spring-jcl-5.1.14.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/WEB-INF/lib/spring-web-5.1.14.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/WEB-INF/lib/spring-webmvc-5.1.14.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Prismat-1.0-SNAPSHOT/log.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/Prismat.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/backend/AppConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/backend/AppInitializer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/backend/controllers/StartPageController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/prismat/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/PrismatGroupProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/backend/Services/DbConnectorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/controllers/StartPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/controllers/StartPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/dao/PersonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/dao/PersonDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/backend/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/backend/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/backend/AppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/backend/AppConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/backend/AppInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/backend/AppInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/backend/controllers/StartPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/backend/controllers/StartPageController.class" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +35,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Alek" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
@@ -81,102 +57,84 @@
     </option>
   </component>
   <component name="ProjectId" id="1ZdJfzOOmpAeKtMkg9hC6F0fAr4" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mysql-connector-java-8.0.19/mysql-connector-java-8.0.19.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager">
-    <configuration name="Tomcat 9.0.26" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.26" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="Prismat:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Prismat" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="33309" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
+  <component name="RunManager" selected="Smart Tomcat.Tomcat_Server">
+    <configuration name="DbConnectorService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="backend.Services.DbConnectorService" />
+      <module name="PrismatGroupProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="backend.Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="Prismat:war exploded" />
-        </option>
       </method>
     </configuration>
+    <configuration name="Tomcat_Server" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="adminPort" value="8005" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="contextPath" value="" />
+      <option name="customContext" value="" />
+      <option name="docBase" value="D:\PrismatGroupProject\src\main\webapp" />
+      <option name="envOptions" />
+      <option name="moduleName" />
+      <option name="passParentEnvironmentVariables" value="true" />
+      <option name="port" value="8090" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat 9.0.33" />
+          <option name="number" value="0" />
+          <option name="path" value="D:\apache-tomcat-9.0.33\apache-tomcat-9.0.33" />
+          <option name="version" value="9.0.33.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="-DENV=DEV" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DbConnectorService" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -201,10 +159,82 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Project_Structure" timestamp="1585465260422">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1585465260422" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585465802932">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585465802932" />
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1585484147824">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1585484147824" />
+    <state x="619" y="290" key="DBNavigator.ConnectionAuthenticationDialog" timestamp="1585477962302">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="619" y="290" key="DBNavigator.ConnectionAuthenticationDialog/0.0.1536.824@0.0.1536.824" timestamp="1585477962302" />
+    <state x="299" y="67" key="DBNavigator.ProjectSettingsDialog" timestamp="1585478134353">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="299" y="67" key="DBNavigator.ProjectSettingsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585478134353" />
+    <state x="548" y="153" key="FileChooserDialogImpl" timestamp="1585482039242">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585482039242" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1585497435333">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585497435333" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1585497435333">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585497435333" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1585497435332">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585497435332" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1585497435333">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585497435333" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1585465336222">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585465336222" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1585465336222">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1585465336222" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1585465336222">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1585465336222" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1585465336222">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585465336222" />
+    <state x="298" y="0" key="SettingsEditor" timestamp="1585563564042">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="298" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585563564042" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1585438039035">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1585438039035" />
+    <state x="431" y="145" key="search.everywhere.popup" timestamp="1585438152286">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585438152286" />
   </component>
 </project>
