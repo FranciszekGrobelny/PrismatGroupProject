@@ -16,6 +16,8 @@ public class Person {
         this.permission = permission;
     }
 
+    public Person(){}
+
     public int getId() {
         return id;
     }
