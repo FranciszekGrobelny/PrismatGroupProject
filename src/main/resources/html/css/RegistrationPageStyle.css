@@ -34,11 +34,3 @@ input
     background-color: #343333;
     color: #d6cccb;
 }
-#loginInput
-{
-    border-radius: 15px 50px 30px;
-    border: 2px solid #609;
-    padding: 20px;
-    width: 200px;
-    height: 15px;
-}
