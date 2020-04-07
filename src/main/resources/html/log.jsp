@@ -8,10 +8,12 @@
     <title>Logowanie</title>
 </head>
 <body>
+<%@include file="header.jsp" %>
 <form action="/login" method="post">
     Username: <input type="username" name="username" placeholder="Podaj nazwe">
     Password: <input type="password" name="password" placeholder="Podaj haslo">
     <input type="submit" value="Zaloguj">
 </form>
+<%@include file="footer.jsp" %>
 </body>
 </html>
