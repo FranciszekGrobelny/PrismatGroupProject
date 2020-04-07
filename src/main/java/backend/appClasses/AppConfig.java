@@ -25,11 +25,6 @@ public class AppConfig implements WebMvcConfigurer {
         converters.add(stringConverter);
     }
 
-//    @Override
-//    public void configureViewResolvers(ViewResolverRegistry registry) {
-//        registry.jsp("/WEB-INF/views/", ".jsp");
-//    }
-
     public void configureDefaultServletHandling(
             DefaultServletHandlerConfigurer configurer) {
         configurer.enable();

@@ -1,22 +1,34 @@
 package backend.models;
 
+import java.time.LocalDateTime;
+
 public class Person {
     private int id;
     private String login;
     private String password;
     private String email;
-    private String anotherEmail;
-    private boolean permission;
+    private String anotherContact;
+    private int permission;
+    private LocalDateTime dateCreated;
 
-    public Person(String login, String password, String email, String anotherEmail, boolean permission) {
+    public Person(){}
+
+    public Person(String login, String password, String email, String anotherContact, int permission,LocalDateTime dateCreated) {
         this.login = login;
         this.password = password;
         this.email = email;
-        this.anotherEmail = anotherEmail;
+        this.anotherContact = anotherContact;
         this.permission = permission;
+        this.dateCreated = dateCreated;
     }
 
-    public Person(){}
+    public Person(String login, String password, String email, int permission, LocalDateTime dateCreated) {
+        this.login = login;
+        this.password = password;
+        this.email = email;
+        this.permission = permission;
+        this.dateCreated = dateCreated;
+    }
 
     public int getId() {
         return id;
@@ -50,19 +62,19 @@ public class Person {
         this.email = email;
     }
 
-    public String getAnotherEmail() {
-        return anotherEmail;
+    public String getanotherContact() {
+        return anotherContact;
     }
 
-    public void setAnotherEmail(String anotherEmail) {
-        this.anotherEmail = anotherEmail;
+    public void setanotherContact(String anotherContact) {
+        this.anotherContact = anotherContact;
     }
 
-    public boolean getPermission() {
+    public int getPermission() {
         return permission;
     }
 
-    public void setPermission(boolean permission){
+    public void setPermission(int permission){
         this.permission = permission;
     }
 
@@ -72,8 +84,8 @@ public class Person {
                 "login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
-                ", anotherEmail='" + anotherEmail + '\'' +
-                ", anotherEmail='" + permission + '\'' +
+                ", anotherContact='" + anotherContact + '\'' +
+                ", anotherContact='" + permission + '\'' +
                 '}';
     }
 }

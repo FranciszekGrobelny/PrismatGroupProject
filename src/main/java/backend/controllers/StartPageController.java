@@ -7,33 +7,38 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.context.support.XmlWebApplicationContext;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 @Controller
 public class StartPageController {
 
+    private PersonDao personDao;
+    public StartPageController(PersonDao personDao){
+        this.personDao = personDao;
+    }
+
     @GetMapping("/login")
     public String loginPage(){
+
         return "log.html";
     }
 
     @GetMapping("/registrationPageAction")
     public String registrationPage()
     {
+
         return "RegistrationPage.html";
     }
 
     @PostMapping("/login")
     @ResponseBody
-    public String checkLogin(@RequestParam("login") String login,
-                             @RequestParam("password") String password,
-                             HttpServletResponse response) throws IOException {
+    public void checkLogin(@RequestParam("login") String login,
+                           @RequestParam("password") String password,
+                           HttpServletResponse response) throws IOException {
 
-        XmlWebApplicationContext context = new XmlWebApplicationContext();
-        PersonDao personDao = context.getBean(PersonDao.class);
         Person person = personDao.readByLogin(login);
         String passwordFromDb = person.getPassword();
 
@@ -42,6 +47,26 @@ public class StartPageController {
         }else {
             response.sendRedirect("/app/userPage");
         }
-        return "";
+    }
+
+    @PostMapping("/registrationPageAction")
+    @ResponseBody
+    public void checkRegistration(@RequestParam("login") String login,
+                                  @RequestParam("email") String email,
+                                  @RequestParam(value = "anotherContact", required = false) String anotherContact,
+                                  @RequestParam("password") String password,
+                                  @RequestParam("teacher") boolean isTeacher,
+                                  HttpServletResponse response) throws IOException {
+        Person person;
+        int teacher = isTeacher ? 1 : 0;
+        LocalDateTime dateCreated = LocalDateTime.now();
+        if(anotherContact.equals("")){
+            person = new Person(login, password, email, teacher, dateCreated);
+        }else{
+            person = new Person(login, password, email, anotherContact, teacher, dateCreated);
+        }
+        
+        personDao.create(person);
+        response.sendRedirect("/app/userPage");
     }
 }
