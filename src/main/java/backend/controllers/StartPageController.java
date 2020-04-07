@@ -58,14 +58,13 @@ public class StartPageController {
                                   @RequestParam("teacher") boolean isTeacher,
                                   HttpServletResponse response) throws IOException {
         Person person;
-        int teacher = isTeacher ? 1 : 0;
         LocalDateTime dateCreated = LocalDateTime.now();
         if(anotherContact.equals("")){
-            person = new Person(login, password, email, teacher, dateCreated);
+            person = new Person(login, password, email, isTeacher, dateCreated);
         }else{
-            person = new Person(login, password, email, anotherContact, teacher, dateCreated);
+            person = new Person(login, password, email, anotherContact, isTeacher, dateCreated);
         }
-        
+
         personDao.create(person);
         response.sendRedirect("/app/userPage");
     }

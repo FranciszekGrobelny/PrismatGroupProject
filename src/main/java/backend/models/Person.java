@@ -8,12 +8,12 @@ public class Person {
     private String password;
     private String email;
     private String anotherContact;
-    private int permission;
+    private boolean permission;
     private LocalDateTime dateCreated;
 
     public Person(){}
 
-    public Person(String login, String password, String email, String anotherContact, int permission,LocalDateTime dateCreated) {
+    public Person(String login, String password, String email, String anotherContact, boolean permission,LocalDateTime dateCreated) {
         this.login = login;
         this.password = password;
         this.email = email;
@@ -22,7 +22,7 @@ public class Person {
         this.dateCreated = dateCreated;
     }
 
-    public Person(String login, String password, String email, int permission, LocalDateTime dateCreated) {
+    public Person(String login, String password, String email, boolean permission, LocalDateTime dateCreated) {
         this.login = login;
         this.password = password;
         this.email = email;
@@ -62,19 +62,19 @@ public class Person {
         this.email = email;
     }
 
-    public String getanotherContact() {
+    public String getAnotherContact() {
         return anotherContact;
     }
 
-    public void setanotherContact(String anotherContact) {
+    public void setAnotherContact(String anotherContact) {
         this.anotherContact = anotherContact;
     }
 
-    public int getPermission() {
+    public boolean getPermission() {
         return permission;
     }
 
-    public void setPermission(int permission){
+    public void setPermission(boolean permission){
         this.permission = permission;
     }
 

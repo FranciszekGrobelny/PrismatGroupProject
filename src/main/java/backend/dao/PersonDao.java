@@ -37,7 +37,7 @@ public class PersonDao {
             insertStatement.setString(1, person.getLogin());
             insertStatement.setString(2, person.getPassword());
             insertStatement.setString(3, person.getEmail());
-            insertStatement.setString(4, person.getAnotherEmail());
+            insertStatement.setString(4, person.getAnotherContact());
             insertStatement.setBoolean(5, person.getPermission());
             ResultSet resultSet = insertStatement.executeQuery();
 
@@ -70,7 +70,7 @@ public class PersonDao {
                     person.setLogin(resultSet.getString("Login"));
                     person.setPassword(resultSet.getString("Password"));
                     person.setEmail(resultSet.getString("Email"));
-                    person.setAnotherEmail(resultSet.getString("AnotherContact"));
+                    person.setAnotherContact(resultSet.getString("AnotherContact"));
                     person.setPermission(resultSet.getBoolean("Permission"));
 
                 }
@@ -88,7 +88,7 @@ public class PersonDao {
             statement.setString(1, person.getLogin());
             statement.setString(2, person.getPassword());
             statement.setString(3, person.getEmail());
-            statement.setString(4, person.getAnotherEmail());
+            statement.setString(4, person.getAnotherContact());
             statement.setBoolean(5, person.getPermission());
 
             statement.executeUpdate();
@@ -121,7 +121,7 @@ public class PersonDao {
                     person.setLogin(resultSet.getString("Login"));
                     person.setPassword(resultSet.getString("Password"));
                     person.setEmail(resultSet.getString("Email"));
-                    person.setAnotherEmail(resultSet.getString("AnotherContact"));
+                    person.setAnotherContact(resultSet.getString("AnotherContact"));
                     person.setPermission(resultSet.getBoolean("Permission"));
                 }
             }
