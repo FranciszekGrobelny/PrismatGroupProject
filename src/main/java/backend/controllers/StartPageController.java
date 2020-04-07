@@ -15,7 +15,7 @@ public class StartPageController {
 
     @GetMapping("/login")
     public String loginPage(){
-        return "log.jsp";
+        return "log.html";
     }
     @GetMapping("/registrationPageAction")
     public String registrationPage()
