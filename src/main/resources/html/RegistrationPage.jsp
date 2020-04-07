@@ -3,38 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</body>
 </head>
-<link rel="stylesheet" href="css/HeaderAndFooter.css" type="text/css" />
-<link rel="stylesheet" href="css/RegistrationPageStyle.css" type="text/css" />
+<link rel="stylesheet" href="css/registrationPageStyle.css" type="text/css" />
 <body>
-    <header>
-    <u1 class ="left-corner">
-        <li><a href="">Logo</a> </li>
-    </u1>
-    <u1 class="right-corner">
-        <li><a href="/">Home</a> </li>
-        <li><a href="/login">Sign in</a> </li>
-        <li><a href="/registrationPageAction">Sign up</a> </li>
-        <li><a href="#">About us</a> </li>
-    </u1>
-    </header>
+    <%@include file="header.jsp" %>
     <div id="registrationStyle">
         <h1>Registration</h1>
         <p>Please fill in this form to create an account.</p>
     <form action="/registrationPageAction" method="post">
-    Login:<input type="text"  placeholder="Enter your login"  requaired/>  </br>
-    Email:<input type="mail"  placeholder="Enter your email" requaired>  </br>
+    Login:<input type="text"  placeholder="Enter your login" name="login" requaired/>  </br>
+    Email:<input type="mail"  placeholder="Enter your email" name="email" requaired>  </br>
+    Another contact:<input type="text"  placeholder="Email or phone number" name="anotherContact" requaired>  </br>
     Password:<input type="password" name="password" placeholder="Enter your password" requaired> </br>
     Confirm password:<input placeholder="Confirm your password" requaired type="password">  </br>
         <font size="3">If you are a lecturer please check the field.</font>
-    <input type="checkbox" name="Teacher" value="Teacher" > </br>
+    <input type="checkbox" name="teacher" value="Teacher" > </br>
     <input  type="submit" value="Register" class = "registrationButton" > </br>
     </form>
     </div>
-    <footer>
-    &COPY 2020 Prismat developers. All rights reserved.
-    </footer>
-
+        <%@include file="footer.jsp" %>
 </body>
 </html>

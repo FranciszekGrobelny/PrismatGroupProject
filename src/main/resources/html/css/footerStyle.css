@@ -1,0 +1,17 @@
+body
+{
+  background-attachment: fixed;
+  	background-color: #3B3B36;
+    margin: 0px;
+    padding: 0px;
+}
+footer
+{
+    clear: both;
+    text-align: center;
+    background: #363630;
+    margin-top: 50px;
+    padding: 10px;
+    font-size: 15px;
+    color: #fff;
+}

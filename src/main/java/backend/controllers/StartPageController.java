@@ -20,7 +20,7 @@ public class StartPageController {
     @GetMapping("/registrationPageAction")
     public String registrationPage()
     {
-        return "RegistrationPage.html";
+        return "RegistrationPage.jsp";
     }
     @PostMapping("/login")
     @ResponseBody
