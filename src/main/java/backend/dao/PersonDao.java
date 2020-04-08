@@ -3,14 +3,16 @@ package backend.dao;
 import backend.exceptions.NotFoundException;
 import backend.models.Person;
 import backend.services.DbConnectorService;
+import org.springframework.stereotype.Controller;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+@Controller
 public class PersonDao {
 
     private DbConnectorService dao;
-    private Person person;
+    private Person person = new Person();
 
     public PersonDao()
     {
@@ -25,6 +27,8 @@ public class PersonDao {
             "UPDATE persons SET login=?, password=?, email=?, anotherEmail=?, permission=? WHERE id = ?;";
     private static final String DELETE_PERSON_QUERY =
             "DELETE FROM persons where id = ?;";
+    private static final String READ_PERSON_BY_USERNAME_QUERY=
+            "SELECT * FROM persons WHERE login=?";
 
     public Person create(Person person) {
 
@@ -33,7 +37,7 @@ public class PersonDao {
             insertStatement.setString(1, person.getLogin());
             insertStatement.setString(2, person.getPassword());
             insertStatement.setString(3, person.getEmail());
-            insertStatement.setString(4, person.getAnotherEmail());
+            insertStatement.setString(4, person.getAnotherContact());
             insertStatement.setBoolean(5, person.getPermission());
             ResultSet resultSet = insertStatement.executeQuery();
 
@@ -57,7 +61,7 @@ public class PersonDao {
     }
 
     public Person read(Integer personId) {
-
+        person = new Person();
         try (PreparedStatement statement = dao.connect().prepareStatement(READ_PERSON_QUERY)) {
             statement.setInt(1, personId);
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -66,7 +70,7 @@ public class PersonDao {
                     person.setLogin(resultSet.getString("Login"));
                     person.setPassword(resultSet.getString("Password"));
                     person.setEmail(resultSet.getString("Email"));
-                    person.setAnotherEmail(resultSet.getString("AnotherContact"));
+                    person.setAnotherContact(resultSet.getString("AnotherContact"));
                     person.setPermission(resultSet.getBoolean("Permission"));
 
                 }
@@ -84,7 +88,7 @@ public class PersonDao {
             statement.setString(1, person.getLogin());
             statement.setString(2, person.getPassword());
             statement.setString(3, person.getEmail());
-            statement.setString(4, person.getAnotherEmail());
+            statement.setString(4, person.getAnotherContact());
             statement.setBoolean(5, person.getPermission());
 
             statement.executeUpdate();
@@ -105,6 +109,27 @@ public class PersonDao {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public Person readByLogin(String login){
+        person = new Person();
+        try (PreparedStatement statement = dao.connect().prepareStatement(READ_PERSON_BY_USERNAME_QUERY)) {
+            statement.setString(1, login);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    person.setId(resultSet.getInt("ID"));
+                    person.setLogin(resultSet.getString("Login"));
+                    person.setPassword(resultSet.getString("Password"));
+                    person.setEmail(resultSet.getString("Email"));
+                    person.setAnotherContact(resultSet.getString("AnotherContact"));
+                    person.setPermission(resultSet.getBoolean("Permission"));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return person;
     }
 }
 

@@ -1,19 +1,33 @@
 package backend.models;
 
+import java.time.LocalDateTime;
+
 public class Person {
     private int id;
     private String login;
     private String password;
     private String email;
-    private String anotherEmail;
+    private String anotherContact;
     private boolean permission;
+    private LocalDateTime dateCreated;
 
-    public Person(String login, String password, String email, String anotherEmail, boolean permission) {
+    public Person(){}
+
+    public Person(String login, String password, String email, String anotherContact, boolean permission,LocalDateTime dateCreated) {
         this.login = login;
         this.password = password;
         this.email = email;
-        this.anotherEmail = anotherEmail;
+        this.anotherContact = anotherContact;
         this.permission = permission;
+        this.dateCreated = dateCreated;
+    }
+
+    public Person(String login, String password, String email, boolean permission, LocalDateTime dateCreated) {
+        this.login = login;
+        this.password = password;
+        this.email = email;
+        this.permission = permission;
+        this.dateCreated = dateCreated;
     }
 
     public int getId() {
@@ -48,12 +62,12 @@ public class Person {
         this.email = email;
     }
 
-    public String getAnotherEmail() {
-        return anotherEmail;
+    public String getAnotherContact() {
+        return anotherContact;
     }
 
-    public void setAnotherEmail(String anotherEmail) {
-        this.anotherEmail = anotherEmail;
+    public void setAnotherContact(String anotherContact) {
+        this.anotherContact = anotherContact;
     }
 
     public boolean getPermission() {
@@ -70,8 +84,8 @@ public class Person {
                 "login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
-                ", anotherEmail='" + anotherEmail + '\'' +
-                ", anotherEmail='" + permission + '\'' +
+                ", anotherContact='" + anotherContact + '\'' +
+                ", anotherContact='" + permission + '\'' +
                 '}';
     }
 }
