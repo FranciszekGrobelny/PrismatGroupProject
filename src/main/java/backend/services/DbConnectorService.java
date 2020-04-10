@@ -1,29 +1,26 @@
 package backend.services;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import static java.sql.DriverManager.getConnection;
 
 public class DbConnectorService {
-    public DbConnectorService(){}
 
-    public static Connection connect(){
+    public Connection connect() throws SQLException {
+
+        String host = "jdbc:mysql://localhost:3306/prismat?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false=false&serverTimezone=UTC";
+        String user = "root";
+        String password = "";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String host = "jdbc:mysql://localhost:3306/prismat";
-            String user = "root";
-            String password = "";
-            Connection connection = DriverManager.getConnection(host, user, password);
-
-            if(connection!=null) {
-                System.out.println("Succesfull Connection.");
-            }
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
-        return connect();
+        return getConnection(host, user, password);
     }
 }
 

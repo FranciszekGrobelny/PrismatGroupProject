@@ -8,26 +8,26 @@ public class Person {
     private String password;
     private String email;
     private String anotherContact;
-    private boolean permission;
+    private int permission;
     private LocalDateTime dateCreated;
 
     public Person(){}
 
-    public Person(String login, String password, String email, String anotherContact, boolean permission,LocalDateTime dateCreated) {
+    public Person(String login, String password, String email,  String anotherContact, int permission) {
         this.login = login;
         this.password = password;
         this.email = email;
         this.anotherContact = anotherContact;
         this.permission = permission;
-        this.dateCreated = dateCreated;
+        //this.dateCreated = dateCreated;
     }
 
-    public Person(String login, String password, String email, boolean permission, LocalDateTime dateCreated) {
+    public Person(String login, String password, String email, int permission) {
         this.login = login;
         this.password = password;
         this.email = email;
         this.permission = permission;
-        this.dateCreated = dateCreated;
+        //this.dateCreated = dateCreated;
     }
 
     public int getId() {
@@ -70,11 +70,11 @@ public class Person {
         this.anotherContact = anotherContact;
     }
 
-    public boolean getPermission() {
+    public int getPermission() {
         return permission;
     }
 
-    public void setPermission(boolean permission){
+    public void setPermission(int permission){
         this.permission = permission;
     }
 
@@ -85,7 +85,7 @@ public class Person {
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", anotherContact='" + anotherContact + '\'' +
-                ", anotherContact='" + permission + '\'' +
+                ", permission='" + permission + '\'' +
                 '}';
     }
 }

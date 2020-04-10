@@ -20,15 +20,15 @@ public class PersonDao {
     }
 
     private static final String CREATE_PERSON_QUERY =
-            "INSERT INTO persons(login, password, email, anotherEmail, permission) VALUES (?,?,?,?,?);";
+            "INSERT INTO person(login, password, email, anotherContact, permission) VALUES (?,?,?,?,?)";
     private static final String READ_PERSON_QUERY =
-            "SELECT * FROM persons where id = ?;";
+            "SELECT * FROM person where id = ?";
     private static final String UPDATE_PERSON_QUERY =
-            "UPDATE persons SET login=?, password=?, email=?, anotherEmail=?, permission=? WHERE id = ?;";
+            "UPDATE person SET login=?, password=?, email=?, anotherContact=?, permission=? WHERE id = ?";
     private static final String DELETE_PERSON_QUERY =
-            "DELETE FROM persons where id = ?;";
+            "DELETE FROM person where id = ?";
     private static final String READ_PERSON_BY_USERNAME_QUERY=
-            "SELECT * FROM persons WHERE login=?";
+            "SELECT * FROM person WHERE login=?";
 
     public Person create(Person person) {
 
@@ -38,12 +38,8 @@ public class PersonDao {
             insertStatement.setString(2, person.getPassword());
             insertStatement.setString(3, person.getEmail());
             insertStatement.setString(4, person.getAnotherContact());
-            insertStatement.setBoolean(5, person.getPermission());
-            ResultSet resultSet = insertStatement.executeQuery();
-
-            if (resultSet == null) {
-                throw new RuntimeException("Execute update returned " + resultSet);
-            }
+            insertStatement.setInt(5, person.getPermission());
+            insertStatement.executeUpdate();
 
             try (ResultSet generatedKeys = insertStatement.getGeneratedKeys()) {
                 if (generatedKeys.first()) {
@@ -71,7 +67,7 @@ public class PersonDao {
                     person.setPassword(resultSet.getString("Password"));
                     person.setEmail(resultSet.getString("Email"));
                     person.setAnotherContact(resultSet.getString("AnotherContact"));
-                    person.setPermission(resultSet.getBoolean("Permission"));
+                    person.setPermission(resultSet.getInt("Permission"));
 
                 }
             }
@@ -89,7 +85,7 @@ public class PersonDao {
             statement.setString(2, person.getPassword());
             statement.setString(3, person.getEmail());
             statement.setString(4, person.getAnotherContact());
-            statement.setBoolean(5, person.getPermission());
+            statement.setInt(5, person.getPermission());
 
             statement.executeUpdate();
         } catch (Exception e) {
@@ -122,7 +118,7 @@ public class PersonDao {
                     person.setPassword(resultSet.getString("Password"));
                     person.setEmail(resultSet.getString("Email"));
                     person.setAnotherContact(resultSet.getString("AnotherContact"));
-                    person.setPermission(resultSet.getBoolean("Permission"));
+                    person.setPermission(resultSet.getInt("Permission"));
                 }
             }
         } catch (Exception e) {
