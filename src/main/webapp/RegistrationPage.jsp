@@ -13,7 +13,7 @@
     <form action="/registrationPageAction" method="post">
     Login:<input type="text"  placeholder="Enter your login" name="login" required/>  </br>
     Email:<input type="mail"  placeholder="Enter your email" name="email" required>  </br>
-    Another contact:<input type="text"  placeholder="Email or phone number" name="anotherContact" required="false">  </br>
+    Another contact:<input type="text"  placeholder="Email or phone number" name="anotherContact">  </br>
     Password:<input type="password" name="password" placeholder="Enter your password" required> </br>
     Confirm password:<input placeholder="Confirm your password" required type="password">  </br>
         <font size="3">If you are a lecturer please check the field.</font>

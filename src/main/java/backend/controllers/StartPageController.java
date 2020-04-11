@@ -54,7 +54,7 @@ public class StartPageController {
                                   @RequestParam("email") String email,
                                   @RequestParam(value = "anotherContact", required = false) String anotherContact,
                                   @RequestParam("password") String password,
-                                  @RequestParam("isTeacher") boolean isTeacher,
+                                  @RequestParam(value = "isTeacher", required = false) boolean isTeacher,
                                   @org.jetbrains.annotations.NotNull HttpServletResponse response) throws IOException {
         Person person;
         int permission = 0;
