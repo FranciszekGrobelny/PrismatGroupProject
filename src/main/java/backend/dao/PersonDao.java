@@ -62,12 +62,12 @@ public class PersonDao {
             statement.setInt(1, personId);
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    person.setId(resultSet.getInt("ID"));
-                    person.setLogin(resultSet.getString("Login"));
-                    person.setPassword(resultSet.getString("Password"));
-                    person.setEmail(resultSet.getString("Email"));
-                    person.setAnotherContact(resultSet.getString("AnotherContact"));
-                    person.setPermission(resultSet.getInt("Permission"));
+                    person.setId(resultSet.getInt("id"));
+                    person.setLogin(resultSet.getString("login"));
+                    person.setPassword(resultSet.getString("password"));
+                    person.setEmail(resultSet.getString("email"));
+                    person.setAnotherContact(resultSet.getString("anotherContact"));
+                    person.setPermission(resultSet.getInt("permission"));
 
                 }
             }
