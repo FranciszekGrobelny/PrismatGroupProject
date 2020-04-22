@@ -8,6 +8,12 @@ public class Groups {
 
     public Groups(){}
 
+    public Groups(String name, String description, int maxNumberOfPlaces) {
+        this.name = name;
+        this.description = description;
+        this.maxNumberOfPlaces = maxNumberOfPlaces;
+    }
+
     public Groups(int id, String name, String description, int maxNumberOfPlaces){
         this.id = id;
         this.name = name;

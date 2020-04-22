@@ -9,6 +9,7 @@
     </properties>
     <root id="archive" name="PrismatGroupProject-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="PrismatGroupProject:war exploded" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/mysql-connector-java-8.0.19.jar" />
     </root>
   </artifact>
 </component>

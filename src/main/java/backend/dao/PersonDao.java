@@ -3,6 +3,7 @@ package backend.dao;
 import backend.exceptions.NotFoundException;
 import backend.models.Person;
 import backend.services.DbConnectorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.sql.PreparedStatement;
@@ -14,6 +15,7 @@ public class PersonDao {
     private DbConnectorService dao;
     private Person person = new Person();
 
+    @Autowired
     public PersonDao()
     {
         dao = new DbConnectorService();
