@@ -25,13 +25,13 @@
             <table>
         <c:forEach items="${groups}" var="group">
             <tr>
-                <td><li class="groupList"><a href="/">${group}</a></li></td>
-                <td><button class="deleteGroupButton">Usun grupe</button></td>
+                <td><li class="groupList"><a href="/">${group.name}</a></li></td>
+                <td><a href="/app/delete?name=${group.name}" class="deleteGroupButton"><button >Usun grupe</button></a></td>
             </tr>
         </c:forEach>
             </table>
         </ul>
-        <button id="addGroupButton"> Dodaj grupę</button>
+        <a href="/app/add" id="addGroupButton"><button > Dodaj grupe</button></a>
     </div>
 </div>
 

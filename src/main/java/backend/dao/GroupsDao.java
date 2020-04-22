@@ -3,10 +3,13 @@ package backend.dao;
 import backend.exceptions.NotFoundException;
 import backend.models.Groups;
 import backend.services.DbConnectorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class GroupsDao {
@@ -14,6 +17,7 @@ public class GroupsDao {
     private DbConnectorService dao;
     private Groups groups;
 
+    @Autowired
     public GroupsDao(){ dao = new DbConnectorService();}
 
     private static final String CREATE_GROUPS_QUERY =
@@ -24,7 +28,26 @@ public class GroupsDao {
             "UPDATE groups SET name=?, description=?, maxNumberOfPlaces=? WHERE name = ?";
     private static final String DELETE_GROUPS_QUERY =
             "DELETE FROM groups where name = ?";
+    private static final String READ_ALL_GROUPS_QUERY = "SELECT * FROM groups";
 
+    public List<Groups> getAllGroups(){
+        List<Groups> groupList = new ArrayList<>();
+
+        try (PreparedStatement statement = dao.connect().prepareStatement(READ_ALL_GROUPS_QUERY)) {
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    groupList.add(new Groups(resultSet.getInt("id"),
+                            resultSet.getString("name"),
+                            resultSet.getString("description"),
+                            resultSet.getInt("maxNumberOfPlaces")));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return groupList;
+    }
     public Groups create(Groups groups) {
 
         try (PreparedStatement insertStatement = dao.connect().prepareStatement(CREATE_GROUPS_QUERY,
