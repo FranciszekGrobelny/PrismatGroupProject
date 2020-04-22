@@ -23,7 +23,7 @@ public class StartPageController {
     @GetMapping("/login")
     public String loginPage(){
 
-        return "log.html";
+        return "log.jsp";
     }
 
     @GetMapping("/registrationPageAction")

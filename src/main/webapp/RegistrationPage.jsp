@@ -6,21 +6,41 @@
 </head>
 <link rel="stylesheet" href="css/registrationPageStyle.css" type="text/css" />
 <body>
-    <%@include file="header.jsp" %>
-    <div id="registrationStyle">
-        <h1>Registration</h1>
-        <p>Please fill in this form to create an account.</p>
-    <form action="/registrationPageAction" method="post">
-    Login:<input type="text"  placeholder="Enter your login" name="login" required/>  </br>
-    Email:<input type="mail"  placeholder="Enter your email" name="email" required>  </br>
-    Another contact:<input type="text"  placeholder="Email or phone number" name="anotherContact">  </br>
-    Password:<input type="password" name="password" placeholder="Enter your password" required> </br>
-    Confirm password:<input placeholder="Confirm your password" required type="password">  </br>
-        <font size="3">If you are a lecturer please check the field.</font>
-    <input type="checkbox" name="isTeacher"> </br>
-    <input  type="submit" value="Register" class = "registrationButton" > </br>
-    </form>
-    </div>
+
+     <div id="container">
+     <%@include file="header.jsp" %>
+        <div id="content"></br>
+        <div id="registrationStyle">
+            <h1>Registration</h1>
+            <hr></br>
+            <p>Please fill in this form to create an account.</p></br></br>
+                <form action="/registrationPageAction" method="post">
+                <table>
+                   <tr>
+                      <td><p>Login:</p></td>            <td><input type="text"  placeholder="Enter your login" name="login" required/></td>
+                   <tr>
+                      <td><p>Email:</p></td>            <td><input type="mail"  placeholder="Enter your email" name="email" required></td>
+                   </tr>
+                   <tr>
+                      <td><p>Another contact:</p></td>  <td><input type="text"  placeholder="Email or phone number" name="anotherContact"> </td>
+                   </tr>
+                   <tr>
+                      <td><p>Password:</p></td>         <td><input type="password" name="password" placeholder="Enter your password" required></td>
+                   </tr>
+                   <tr>
+                      <td><p>Confirm password:</p></td> <td><input placeholder="Confirm your password" required type="password"></td>
+                   </tr>
+                </table></br>
+
+                    <font size="3">If you are a lecturer please check the field.</font>
+                    <input type="checkbox" name="isTeacher"> </br></br></br>
+
+                    <input  type="submit" value="Register" class = "registrationButton" > </br>
+                </form>
+        </div>
+        </div>
         <%@include file="footer.jsp" %>
+     </div>
+
 </body>
 </html>

@@ -27,10 +27,36 @@ ul li
 {
     list-style-type: none;
 }
+
 a
 {
     color: #fff;
-    font-size: 15px;
+    font-size: 18px;
     text-decoration: none;
+    display: block;
+    color: #666;
+    text-align: center;
+    width:80px;
 
 }
+a:hover:not(.active) {
+    color: #ddd;
+    font-size: 20px;
+    cursor:pointer;
+    color:#ffffff;
+    border-radius:10px;
+ }
+
+ul
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+
+
+

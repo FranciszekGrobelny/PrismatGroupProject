@@ -1,36 +1,81 @@
 body
 {
-background-attachment: fixed;
+    background-attachment: fixed;
 	background-color: #3B3B36;
 	font-size: 20px;
 	color: #FFFFFF;
 	font-family: 'Lato';
 }
+
+#container
+{
+	width:1200px;
+    height: 720px;
+	margin: centre;
+	margin-left: auto;
+    margin-right: auto;
+}
+#content
+{
+	width:1200px;
+	height: 612px;
+}
 #registrationStyle
 {
 	color: #E9E6E5;
 	background-color: #353535;
-	width: 400px ;
+	width: 420px ;
 	height: 450px ;
 	padding: 50px;
 	margin: 150px auto;
 	text-align: center;
+	position: relative;
+    margin: auto;
+    top: 19px;
 }
-.registrationButton
-{
-width: 100%;
-  background-color: #AE60B6;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.registrationButton{
+    background-color:#ad60b6;
+    border-radius:28px;
+    border:#ad60b6;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:18px;
+    padding:12px 38px;
+    font-family: 'Lato';
+    float: center;
 }
-input
-{
-    float: right;
+.registrationButton:hover {
+    background-color:#d570e0;
+}
+
+input{
+
     margin: 0 10 0 10px;
     background-color: #343333;
     color: #d6cccb;
+    border-radius:10px;
+    border: 1px solid #ad60b6;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:18px;
+    padding:3px 20px;
+    text-shadow:0px 1px 0px #000000;
+    text-align: center;
+    font-family: 'Lato';
+}
+p{
+float:right;
+position: relative;
+margin-top: 0px;
+margin-bottom: -2px;
+}
+
+hr{
+    background-color:#ad60b6;
+    height:3px;
+    width:80%;
+    border:#ad60b6;
+    position: relative;
+    margin-top: -20px;
 }
