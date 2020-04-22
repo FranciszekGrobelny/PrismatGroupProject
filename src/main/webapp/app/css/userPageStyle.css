@@ -1,0 +1,91 @@
+html{ height: 100%; margin: 0; }
+body{
+    height: 100%;
+    background-color: rgb(20, 21, 29);
+}
+#allPage{
+
+    font-family: Arial;
+    background-attachment: fixed;
+    background-color: rgba(20, 21, 29, 0.91);
+    font-size: 20px;
+    color: #D2D2D1;
+    font-family: 'Lato';
+    height: 100%;
+    width: 100%;
+}
+/*----------div user------------*/
+#userInfos{
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    border-style: solid;
+    border-color: #666166;
+    border-width: 3px;
+    border-radius: 5px;
+    background-color: #3c3c3c;
+}
+#userInfosButton{
+    font-size: 18px;
+    margin: 8px auto;
+    display: flex;
+    position: relative;
+    
+}
+#userLogo{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    left: 40px;
+    margin: 8px;
+}
+p{
+    margin: 8px;
+}
+/*----------div group-------------*/
+.groups{
+    border-style: solid;
+    border-color: #666166;
+    border-width: 3px;
+    border-radius: 5px;
+    background-color: #3c3c3c;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    color: #D2D2D1;
+}
+a:visited{
+    color: #D2D2D1;
+}
+#groupLogo{
+
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 8px;
+}
+.textNearImage{
+    margin: 30px;
+    position: relative;
+    float: right;
+    right: 90px;
+}
+.deleteGroupButton{
+    position: relative;
+    float: right;
+    margin: 8px;
+}
+#addGroupButton{
+    margin: 8px auto;
+    display: flex;
+    position: relative;
+}
+.groupList{
+    margin: 8px;
+}
+.groupList:hover{
+    color: #AE60B6;
+}
+
+
+

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
@@ -44,6 +45,9 @@ public class StartPageController {
         if(loginFromDb==null || !passwordFromDb.equals(password) && loginFromDb.equals(login)){
             response.sendRedirect("/login");
         }else {
+            Cookie loginCookie = new Cookie("loginCookie", login);
+            loginCookie.setPath("/");
+            response.addCookie(loginCookie);
             response.sendRedirect("/app/userPage");
         }
     }
