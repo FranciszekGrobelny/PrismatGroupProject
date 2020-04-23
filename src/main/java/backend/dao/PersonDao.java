@@ -22,15 +22,15 @@ public class PersonDao {
     }
 
     private static final String CREATE_PERSON_QUERY =
-            "INSERT INTO person(login, password, email, anotherContact, permission) VALUES (?,?,?,?,?)";
+            "INSERT INTO persons(login, password, email, anotherContact, permission) VALUES (?,?,?,?,?)";
     private static final String READ_PERSON_QUERY =
-            "SELECT * FROM person where id = ?";
+            "SELECT * FROM persons where id = ?";
     private static final String UPDATE_PERSON_QUERY =
             "UPDATE person SET login=?, password=?, email=?, anotherContact=?, permission=? WHERE id = ?";
     private static final String DELETE_PERSON_QUERY =
-            "DELETE FROM person where id = ?";
+            "DELETE FROM persons where id = ?";
     private static final String READ_PERSON_BY_USERNAME_QUERY=
-            "SELECT * FROM person WHERE login=?";
+            "SELECT * FROM persons WHERE login=?";
 
     public Person create(Person person) {
 

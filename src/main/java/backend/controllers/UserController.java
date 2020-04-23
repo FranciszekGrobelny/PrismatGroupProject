@@ -11,7 +11,6 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -49,8 +48,9 @@ public class UserController {
     public void addGroupAction(@RequestParam(name = "name") String name,
                                @RequestParam(name = "description") String description,
                                @RequestParam(name = "maxNumberOfPlaces") int maxNumber,
+                               @RequestParam(name = "passwordGroup") String passwordGroup,
                                HttpServletResponse response) throws IOException {
-        Groups group = new Groups(name,description,maxNumber);
+        Groups group = new Groups(name,description,maxNumber, passwordGroup);
         groupsDao.create(group);
        response.sendRedirect("/app/userPage");
     }

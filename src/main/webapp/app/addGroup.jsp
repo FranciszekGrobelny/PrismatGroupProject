@@ -15,6 +15,7 @@
     Nazwa grupy: <input type="text" name="name">
     Opis: <input type="text" name="description">
     Maksymalna liczba uczniow: <input type="number" name="maxNumberOfPlaces">
+    Password do grupy: <input type="text" name="passwordGroup">
     <input type="submit" value="Dodaj">
 </form>
 </body>

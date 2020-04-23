@@ -21,11 +21,11 @@ public class GroupsDao {
     public GroupsDao(){ dao = new DbConnectorService();}
 
     private static final String CREATE_GROUPS_QUERY =
-            "INSERT INTO groups(name, description, maxNumberOfPlaces) VALUES (?,?,?)";
+            "INSERT INTO groups(name, description, maxNumberOfPlaces, passwordGroup) VALUES (?,?,?,?)";
     private static final String READ_GROUPS_QUERY =
             "SELECT * FROM groups where name = ?";
     private static final String UPDATE_GROUPS_QUERY =
-            "UPDATE groups SET name=?, description=?, maxNumberOfPlaces=? WHERE name = ?";
+            "UPDATE groups SET name=?, description=?, maxNumberOfPlaces=?, passwordGroup=? WHERE name = ?";
     private static final String DELETE_GROUPS_QUERY =
             "DELETE FROM groups where name = ?";
     private static final String READ_ALL_GROUPS_QUERY = "SELECT * FROM groups";
@@ -39,7 +39,8 @@ public class GroupsDao {
                     groupList.add(new Groups(resultSet.getInt("id"),
                             resultSet.getString("name"),
                             resultSet.getString("description"),
-                            resultSet.getInt("maxNumberOfPlaces")));
+                            resultSet.getInt("maxNumberOfPlaces"),
+                            resultSet.getString("passwordGroup")));
                 }
             }
         } catch (Exception e) {
@@ -55,6 +56,7 @@ public class GroupsDao {
             insertStatement.setString(1, groups.getName());
             insertStatement.setString(2, groups.getDescription());
             insertStatement.setInt(3, groups.getMaxNumberOfPlaces());
+            insertStatement.setString(4, groups.getPasswordGroup());
             insertStatement.executeUpdate();
 
             try (ResultSet generatedKeys = insertStatement.getGeneratedKeys()) {
@@ -82,6 +84,7 @@ public class GroupsDao {
                     groups.setName(resultSet.getString("name"));
                     groups.setDescription(resultSet.getString("description"));
                     groups.setMaxNumberOfPlaces(resultSet.getInt("maxNumberOfPlaces"));
+                    groups.setPasswordGroup((resultSet.getString("passwordGroup")));
                 }
             }
         } catch (Exception e) {
@@ -93,10 +96,11 @@ public class GroupsDao {
 
     public void update(Groups groups) {
         try (PreparedStatement statement = dao.connect().prepareStatement(UPDATE_GROUPS_QUERY)) {
-            statement.setString(4, groups.getName());
+            statement.setString(5, groups.getName());
             statement.setString(1, groups.getName());
             statement.setString(2, groups.getDescription());
             statement.setInt(3, groups.getMaxNumberOfPlaces());
+            statement.setString(4, groups.getPasswordGroup());
 
             statement.executeUpdate();
         } catch (Exception e) {
