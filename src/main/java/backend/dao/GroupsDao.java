@@ -75,16 +75,13 @@ public class GroupsDao {
     }
 
     public Groups read(String groupsName) {
-        groups = new Groups();
         try (PreparedStatement statement = dao.connect().prepareStatement(READ_GROUPS_QUERY)) {
             statement.setString(1, groupsName);
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    groups.setId(resultSet.getInt("id"));
-                    groups.setName(resultSet.getString("name"));
-                    groups.setDescription(resultSet.getString("description"));
-                    groups.setMaxNumberOfPlaces(resultSet.getInt("maxNumberOfPlaces"));
-                    groups.setPasswordGroup((resultSet.getString("passwordGroup")));
+                    groups = new Groups(resultSet.getInt("id"), resultSet.getString("name"),
+                            resultSet.getString("description"), resultSet.getInt("maxNumberOfPlaces"),
+                            resultSet.getString("passwordGroup"));
                 }
             }
         } catch (Exception e) {
@@ -121,5 +118,7 @@ public class GroupsDao {
             e.printStackTrace();
         }
     }
+
+
     
 }

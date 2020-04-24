@@ -24,7 +24,14 @@
                         <table>
                     <c:forEach items="${groups}" var="group">
                         <tr>
-                            <td><li class="groupList"><a href="/">${group.name}</a></li></td>
+                             <td>
+                                 <form method="post" action="/app/saveGroup">
+                                     <li class="groupList">${group.name}</li></br>
+                                        <input type="hidden" name="groupName" value="${group.name}">
+                                        <input type="password" name="passwordGroup">
+                                        <input type="submit" value="Zapisz się."></br>
+                                 </form>
+                             </td>
                         </tr>
                     </c:forEach>
                         </table>
