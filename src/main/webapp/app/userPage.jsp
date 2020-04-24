@@ -31,7 +31,7 @@
         </c:forEach>
             </table>
         </ul>
-        <a href="/app/add" id="addGroupButton"><button > Dodaj grupe</button></a>
+        <a href="/app/addGroup" id="addGroupButton"><button > Dodaj grupe</button></a>
     </div>
 </div>
 
