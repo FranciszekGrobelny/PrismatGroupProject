@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +30,7 @@ public class GroupsDao {
     private static final String DELETE_GROUPS_QUERY =
             "DELETE FROM groups where name = ?";
     private static final String READ_ALL_GROUPS_QUERY = "SELECT * FROM groups";
+    private static final String READ_ALL_GROUPS_BY_ID_QUERY = "SELECT * FROM groups WHERE id=?";
 
     public List<Groups> getAllGroups(){
         List<Groups> groupList = new ArrayList<>();
@@ -49,6 +51,28 @@ public class GroupsDao {
 
         return groupList;
     }
+
+    public Groups readGroupById(int groupId) throws SQLException {
+
+
+        try (PreparedStatement statement = dao.connect().prepareStatement(READ_ALL_GROUPS_BY_ID_QUERY)) {
+            statement.setInt(1, groupId);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    groups = new Groups(
+                            resultSet.getInt("id"),
+                            resultSet.getString("name"),
+                            resultSet.getString("description"),
+                            resultSet.getInt("maxNumberOfPlaces"),
+                            resultSet.getString("passwordGroup"));
+                }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return groups;
+    }}
+
+
     public Groups create(Groups groups) {
 
         try (PreparedStatement insertStatement = dao.connect().prepareStatement(CREATE_GROUPS_QUERY,
@@ -66,7 +90,6 @@ public class GroupsDao {
                 } else {
                     throw new RuntimeException("Generated key was not found");
                 }
-
             }
         } catch (Exception e) {
             e.printStackTrace();

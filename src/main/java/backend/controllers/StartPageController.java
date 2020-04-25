@@ -17,6 +17,7 @@ public class StartPageController {
 
     private PersonDao personDao;
     public StartPageController(PersonDao personDao){
+
         this.personDao = personDao;
     }
 
