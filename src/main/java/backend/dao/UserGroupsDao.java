@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class UserGroupsDao {
@@ -52,22 +54,23 @@ public class UserGroupsDao {
         return null;
     }
 
-    public UserGroups readByUserId(int userId) {
-        userGroups = new UserGroups();
+    public List<UserGroups> readByUserId(int userId) {
+        List<UserGroups> groupsIdList = new ArrayList<>();
         try (PreparedStatement statement = dao.connect().prepareStatement(READ_USERGROUPS_BY_USERID_QUERY)) {
             statement.setInt(1, userId);
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    userGroups.setId(resultSet.getInt("id"));
-                    userGroups.setUserId(resultSet.getInt("userId"));
-                    userGroups.setGroupsId(resultSet.getInt("groupsId"));
+                    groupsIdList.add(new UserGroups(
+                            resultSet.getInt("id"),
+                            resultSet.getInt("userId"),
+                            resultSet.getInt("groupsId")));
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return userGroups;
+        return groupsIdList;
     }
 
     public UserGroups readByGroupsId(int groupsId) {
