@@ -6,6 +6,8 @@ import backend.services.DbConnectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+
+import java.io.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -79,7 +81,8 @@ public class PersonDao {
         return person;
     }
 
-    public void update(Person person) {
+    public void update(Person person) throws IOException {
+
         try (PreparedStatement statement = dao.connect().prepareStatement(UPDATE_PERSON_QUERY)) {
             statement.setInt(6, person.getId());
             statement.setString(1, person.getLogin());
@@ -90,9 +93,13 @@ public class PersonDao {
 
             statement.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            FileOutputStream  streamToFile= new FileOutputStream (new File("ICoughtThatException!.txt"),true);
+            PrintStream ps = new PrintStream(streamToFile);
+            e.printStackTrace(ps);
         }
     }
+
+
 
     public void delete(Integer personId) {
         try (PreparedStatement statement = dao.connect().prepareStatement(DELETE_PERSON_QUERY)) {
