@@ -29,6 +29,13 @@ public class Person {
         this.permission = permission;
         //this.dateCreated = dateCreated;
     }
+    public Person(String login, String password, String email,String anotherContact) {
+        this.login = login;
+        this.password = password;
+        this.email = email;
+        this.anotherContact = anotherContact;
+
+    }
 
     public int getId() {
         return id;
@@ -81,7 +88,8 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "login='" + login + '\'' +
+                "id='" + id + '\'' +
+                ",login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", anotherContact='" + anotherContact + '\'' +

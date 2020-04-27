@@ -1,7 +1,9 @@
 package backend.controllers;
 
 import backend.dao.GroupsDao;
+import backend.dao.PersonDao;
 import backend.models.Groups;
+import backend.models.Person;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +13,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.List;
 
 @Controller
@@ -18,8 +21,10 @@ import java.util.List;
 public class UserController {
 
     GroupsDao groupsDao;
-    public UserController(GroupsDao groupsDao){
+    PersonDao personDao;
+    public UserController(GroupsDao groupsDao,PersonDao personDao){
         this.groupsDao = groupsDao;
+        this.personDao = personDao;
     }
     @GetMapping("/userPage")
     public String userPage(HttpServletRequest request, Model model ){
@@ -28,7 +33,8 @@ public class UserController {
         System.out.println("gruoa "+groups.toString());
         model.addAttribute("groups",groups);
         Cookie loginCookie = WebUtils.getCookie(request,"loginCookie");
-        request.setAttribute("login", loginCookie.getValue());
+        Person personData = personDao.readByLogin(loginCookie.getValue());
+        request.setAttribute("personData", personData);
         return "/app/userPage.jsp";
     }
 
@@ -54,4 +60,31 @@ public class UserController {
         groupsDao.create(group);
        response.sendRedirect("/app/userPage");
     }
+
+    @PostMapping("/userPage")
+    @ResponseBody
+    public void editPersonAction(@RequestParam(name = "password") String password,
+                                 @RequestParam(name = "email") String email,
+                                 @RequestParam(name = "anotherContact") String anotherContact,
+                                 Model model, HttpServletResponse response,
+                                 HttpServletRequest request)throws IOException {
+
+        Cookie loginCookie = WebUtils.getCookie(request,"loginCookie");
+        Person person = personDao.readByLogin(loginCookie.getValue());
+
+
+        if (!"".equals(password)){
+            person.setPassword(password);
+        }
+        if (!"".equals(email)){
+            person.setEmail(email);
+        }
+        if (!"".equals(anotherContact)){
+            person.setAnotherContact(anotherContact);
+        }
+        personDao.update(person);
+        response.sendRedirect("/app/userPage");
+    }
+
+
 }
