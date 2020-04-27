@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PrismatGroupProject.iml" filepath="$PROJECT_DIR$/.idea/PrismatGroupProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PrismatGroupProject.iml" filepath="$PROJECT_DIR$/PrismatGroupProject.iml" />
     </modules>
   </component>
 </project>
