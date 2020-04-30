@@ -1,11 +1,13 @@
 package backend.dao;
 
+import backend.exceptions.FoundException;
 import backend.exceptions.NotFoundException;
 import backend.models.Groups;
 import backend.services.DbConnectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import java.io.FileNotFoundException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,7 +34,7 @@ public class GroupsDao {
     private static final String READ_ALL_GROUPS_QUERY = "SELECT * FROM groups";
     private static final String READ_ALL_GROUPS_BY_ID_QUERY = "SELECT * FROM groups WHERE id=?";
 
-    public List<Groups> getAllGroups(){
+    public List<Groups> getAllGroups() throws FileNotFoundException {
         List<Groups> groupList = new ArrayList<>();
 
         try (PreparedStatement statement = dao.connect().prepareStatement(READ_ALL_GROUPS_QUERY)) {
@@ -46,13 +48,13 @@ public class GroupsDao {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            FoundException.catchException(e);
         }
 
         return groupList;
     }
 
-    public Groups readGroupById(int groupId) throws SQLException {
+    public Groups readGroupById(int groupId) throws SQLException, FileNotFoundException {
 
 
         try (PreparedStatement statement = dao.connect().prepareStatement(READ_ALL_GROUPS_BY_ID_QUERY)) {
@@ -67,13 +69,13 @@ public class GroupsDao {
                             resultSet.getString("passwordGroup"));
                 }
         } catch (Exception e) {
-            e.printStackTrace();
+                FoundException.catchException(e);
         }
         return groups;
     }}
 
 
-    public Groups create(Groups groups) {
+    public Groups create(Groups groups) throws FileNotFoundException {
 
         try (PreparedStatement insertStatement = dao.connect().prepareStatement(CREATE_GROUPS_QUERY,
                 PreparedStatement.RETURN_GENERATED_KEYS)) {
@@ -92,12 +94,12 @@ public class GroupsDao {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            FoundException.catchException(e);
         }
         return null;
     }
 
-    public Groups read(String groupsName) {
+    public Groups read(String groupsName) throws FileNotFoundException {
         try (PreparedStatement statement = dao.connect().prepareStatement(READ_GROUPS_QUERY)) {
             statement.setString(1, groupsName);
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -108,13 +110,13 @@ public class GroupsDao {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            FoundException.catchException(e);
         }
 
         return groups;
     }
 
-    public void update(Groups groups) {
+    public void update(Groups groups) throws FileNotFoundException {
         try (PreparedStatement statement = dao.connect().prepareStatement(UPDATE_GROUPS_QUERY)) {
             statement.setString(5, groups.getName());
             statement.setString(1, groups.getName());
@@ -124,11 +126,11 @@ public class GroupsDao {
 
             statement.executeUpdate();
         } catch (Exception e) {
-            e.printStackTrace();
+            FoundException.catchException(e);
         }
     }
 
-    public void delete(String groupsName) {
+    public void delete(String groupsName) throws FileNotFoundException {
         try (PreparedStatement statement = dao.connect().prepareStatement(DELETE_GROUPS_QUERY)) {
             statement.setString(1, groupsName);
             statement.executeUpdate();
@@ -138,7 +140,7 @@ public class GroupsDao {
                 throw new NotFoundException("Product not found");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            FoundException.catchException(e);
         }
     }
 

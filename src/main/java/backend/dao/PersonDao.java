@@ -1,5 +1,6 @@
 package backend.dao;
 
+import backend.exceptions.FoundException;
 import backend.exceptions.NotFoundException;
 import backend.models.Person;
 import backend.services.DbConnectorService;
@@ -34,7 +35,7 @@ public class PersonDao {
     private static final String READ_PERSON_BY_USERNAME_QUERY=
             "SELECT * FROM persons WHERE login=?";
 
-    public Person create(Person person) {
+    public Person create(Person person) throws FileNotFoundException {
 
         try (PreparedStatement insertStatement = dao.connect().prepareStatement(CREATE_PERSON_QUERY,
                      PreparedStatement.RETURN_GENERATED_KEYS)) {
@@ -55,12 +56,12 @@ public class PersonDao {
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            FoundException.catchException(e);
         }
         return null;
     }
 
-    public Person read(Integer personId) {
+    public Person read(Integer personId) throws FileNotFoundException {
         person = new Person();
         try (PreparedStatement statement = dao.connect().prepareStatement(READ_PERSON_QUERY)) {
             statement.setInt(1, personId);
@@ -75,7 +76,7 @@ public class PersonDao {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            FoundException.catchException(e);
         }
 
         return person;
@@ -93,15 +94,13 @@ public class PersonDao {
 
             statement.executeUpdate();
         } catch (Exception e) {
-            FileOutputStream  streamToFile= new FileOutputStream (new File("ICoughtThatException!.txt"),true);
-            PrintStream ps = new PrintStream(streamToFile);
-            e.printStackTrace(ps);
+            FoundException.catchException(e);
         }
     }
 
 
 
-    public void delete(Integer personId) {
+    public void delete(Integer personId) throws FileNotFoundException {
         try (PreparedStatement statement = dao.connect().prepareStatement(DELETE_PERSON_QUERY)) {
             statement.setInt(1, personId);
             statement.executeUpdate();
@@ -111,11 +110,11 @@ public class PersonDao {
                 throw new NotFoundException("Product not found");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            FoundException.catchException(e);
         }
     }
 
-    public Person readByLogin(String login){
+    public Person readByLogin(String login) throws FileNotFoundException {
         person = new Person();
         try (PreparedStatement statement = dao.connect().prepareStatement(READ_PERSON_BY_USERNAME_QUERY)) {
             statement.setString(1, login);
@@ -130,7 +129,7 @@ public class PersonDao {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            FoundException.catchException(e);
         }
 
         return person;

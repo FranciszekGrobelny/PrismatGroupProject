@@ -1,11 +1,13 @@
 package backend.dao;
 
+import backend.exceptions.FoundException;
 import backend.exceptions.NotFoundException;
 import backend.models.UserGroups;
 import backend.services.DbConnectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import java.io.FileNotFoundException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -31,7 +33,7 @@ public class UserGroupsDao {
     private static final String READ_USERGROUPS_BY_GROUPSID_QUERY=
             "SELECT * FROM usergroups WHERE groupsId=?";
 
-    public UserGroups create(UserGroups userGroups) {
+    public UserGroups create(UserGroups userGroups) throws FileNotFoundException {
 
         try (PreparedStatement insertStatement = dao.connect().prepareStatement(CREATE_USERGROUPS_QUERY,
                 PreparedStatement.RETURN_GENERATED_KEYS)) {
@@ -49,12 +51,12 @@ public class UserGroupsDao {
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            FoundException.catchException(e);
         }
         return null;
     }
 
-    public List<UserGroups> readByUserId(int userId) {
+    public List<UserGroups> readByUserId(int userId) throws FileNotFoundException {
         List<UserGroups> groupsIdList = new ArrayList<>();
         try (PreparedStatement statement = dao.connect().prepareStatement(READ_USERGROUPS_BY_USERID_QUERY)) {
             statement.setInt(1, userId);
@@ -67,13 +69,13 @@ public class UserGroupsDao {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            FoundException.catchException(e);
         }
 
         return groupsIdList;
     }
 
-    public UserGroups readByGroupsId(int groupsId) {
+    public UserGroups readByGroupsId(int groupsId) throws FileNotFoundException {
         userGroups = new UserGroups();
         try (PreparedStatement statement = dao.connect().prepareStatement(READ_USERGROUPS_BY_GROUPSID_QUERY)) {
             statement.setInt(1, groupsId);
@@ -85,13 +87,13 @@ public class UserGroupsDao {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            FoundException.catchException(e);
         }
 
         return userGroups;
     }
 
-    public void deleteByUserId(int userId) {
+    public void deleteByUserId(int userId) throws FileNotFoundException {
         try (PreparedStatement statement = dao.connect().prepareStatement(DELETE_USERGROUPS_BY_USERID_QUERY)) {
             statement.setInt(1, userId);
             statement.executeUpdate();
@@ -101,11 +103,11 @@ public class UserGroupsDao {
                 throw new NotFoundException("Product not found");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            FoundException.catchException(e);
         }
     }
 
-    public void deleteByGroupsId(int groupsId) {
+    public void deleteByGroupsId(int groupsId) throws FileNotFoundException {
         try (PreparedStatement statement = dao.connect().prepareStatement(DELETE_USERGROUPS_BY_GROUPSID_QUERY)) {
             statement.setInt(1, groupsId);
             statement.executeUpdate();
@@ -115,7 +117,7 @@ public class UserGroupsDao {
                 throw new NotFoundException("Product not found");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            FoundException.catchException(e);
         }
     }
 }

@@ -14,6 +14,7 @@ import org.springframework.web.util.WebUtils;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -43,7 +44,7 @@ public class GroupsController {
     }
 
     @GetMapping("/addGroup")
-    public String groupList(HttpServletRequest request, Model model ){
+    public String groupList(HttpServletRequest request, Model model ) throws FileNotFoundException {
         List<Groups> groups = groupsDao.getAllGroups();
         System.out.println("Success!!!");
         System.out.println(""+groups.toString());

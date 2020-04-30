@@ -14,6 +14,7 @@ import org.springframework.web.util.WebUtils;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ public class UserController {
         this.userGroupsDao = userGroupsDao;
     }
     @GetMapping("/userPage") 
-    public String userPage(HttpServletRequest request, Model model ) throws SQLException {
+    public String userPage(HttpServletRequest request, Model model ) throws SQLException, FileNotFoundException {
                                                  // JAK BEDZIE USER_DAO
         Cookie loginCookie = WebUtils.getCookie(request,"loginCookie");
 
@@ -50,7 +51,7 @@ public class UserController {
     }
 
     @GetMapping("/delete")
-    public String deleteUserGroup(@RequestParam(name = "name") String name){
+    public String deleteUserGroup(@RequestParam(name = "name") String name) throws FileNotFoundException {
         groupsDao.delete(name);
         return "redirect:/app/userPage";
     }
