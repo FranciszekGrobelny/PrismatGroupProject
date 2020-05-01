@@ -9,6 +9,9 @@
     <title>Strona uzytkownika</title>
 </head>
 <body>
+<div>
+ <%@include file="../tmpHeader.jsp" %>
+ </div>
 <div id="allPage">
     <div id="userInfos">
         <img id="userLogo" src="css/noUserLogo.png">
@@ -55,5 +58,8 @@
 </div>
 
 <%--<script src="main/webapp/js/userPage.js"></script>--%>
+</div>
+        <%@include file="../footer.jsp" %>
+     </div>
 </body>
 </html>

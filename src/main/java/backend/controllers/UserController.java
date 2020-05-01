@@ -108,7 +108,18 @@ public class UserController {
         personDao.update(person);
         response.sendRedirect("/app/userPage");
     }
+    @PostMapping("/logout")
+    @ResponseBody
+    public void logoutUser(HttpServletRequest request,
+                             HttpServletResponse response) throws IOException {
+        Cookie deleteLoginCookie = WebUtils.getCookie(request,"loginCookie");
+        System.out.printf(deleteLoginCookie.getName());
+        deleteLoginCookie.setValue("");
+        deleteLoginCookie.setPath("/");
+        deleteLoginCookie.setMaxAge(0);
+        response.addCookie(deleteLoginCookie);
+        response.sendRedirect("/");
 
-
+    }
 }
 

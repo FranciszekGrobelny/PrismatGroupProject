@@ -17,7 +17,7 @@ body{
 /*----------div user------------*/
 #userInfos{
     position: absolute;
-    top: 8px;
+    top: 100px;
     left: 16px;
     border-style: solid;
     border-color: #666166;
@@ -30,7 +30,7 @@ body{
     margin: 8px auto;
     display: flex;
     position: relative;
-    
+
 }
 #userLogo{
     position: relative;
@@ -50,7 +50,7 @@ p{
     border-radius: 5px;
     background-color: #3c3c3c;
     position: absolute;
-    top: 8px;
+    top: 100px;
     right: 16px;
     color: #D2D2D1;
 }

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<link rel="stylesheet" href="css/footerStyle.css" type="text/css" />
 <body>
  <footer>
+ <link href="<c:url value='/css/footerStyle.css'/>" rel="stylesheet" type="text/css" />
    &COPY 2020 Prismat developers. All rights reserved.
   </footer>
 </body>

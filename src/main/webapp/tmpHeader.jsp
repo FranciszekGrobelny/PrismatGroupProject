@@ -12,10 +12,9 @@
         <li><a href="">Logo</a> </li>
     </u1>
     <u1 class="right-corner">
-        <li><a href="/">Home</a> </li>
-        <li><a href="/login">Login</a> </li>
-        <li><a href="/registrationPageAction">Register</a> </li>
-        <li><a href="#">About us</a> </li>
+        <li><a href="#">About Us</a> </li>
+        <form action="/app/logout" method="post">
+        <li><button id="logout" name ="logout">Logout</button></li>
     </u1>
 </header>
 </body>
