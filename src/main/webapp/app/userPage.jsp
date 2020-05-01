@@ -12,11 +12,30 @@
 <div id="allPage">
     <div id="userInfos">
         <img id="userLogo" src="css/noUserLogo.png">
-        <p> Moje informacje </p> <%--    jak bedzie dao to dane beda pobierane z sesji--%>
-        <p> Login: ${login}  </p>
-        <p> Email: ...  </p>
-        <button id="userInfosButton"> Edytuj dane</button>
-    </div>
+        <p> Moje informacje </p>
+        <p> Login: ${personData.login}  </p>
+        <p> Password: ${personData.password} </p>
+        <p> Email: ${personData.email}</p>
+        <p> Another Contact: ${personData.anotherContact}</p>
+        <p> Lecturer Status: ${personData.permission}</p>
+
+<form action="/app/userPage" method="post">
+   <table>
+                     <tr>
+                        <td><p>Email:</p></td>            <td><input type="email"  placeholder="Enter your email" name="email" ></td>
+                     </tr>
+                     <tr>
+                        <td><p>Another contact:</p></td>  <td><input type="text"  placeholder="Email or phone number" name="anotherContact"> </td>
+                     </tr>
+                     <tr>
+                        <td><p>Password:</p></td>         <td><input type="password" name="password" placeholder="Enter your password" ></td>
+                     </tr>
+
+                  </table></br>
+                    <button id="editButton" name ="editButton">Edit</button>
+                  </form>
+ </div>
+
 
     <div class="groups">
         <img id="groupLogo" src="css/groupLogo.png">

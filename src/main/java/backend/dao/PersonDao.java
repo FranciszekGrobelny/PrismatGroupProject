@@ -2,6 +2,7 @@ package backend.dao;
 
 import backend.exceptions.FoundException;
 import backend.exceptions.NotFoundException;
+import backend.models.Groups;
 import backend.models.Person;
 import backend.services.DbConnectorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import java.io.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.List;
 
 @Controller
 public class PersonDao {
@@ -29,7 +31,7 @@ public class PersonDao {
     private static final String READ_PERSON_QUERY =
             "SELECT * FROM persons WHERE id = ?";
     private static final String UPDATE_PERSON_QUERY =
-            "UPDATE person SET login=?, password=?, email=?, anotherContact=?, permission=? WHERE id = ?";
+            "UPDATE persons SET login=?, password=?, email=?, anotherContact=?, permission=? WHERE id = ?";
     private static final String DELETE_PERSON_QUERY =
             "DELETE FROM persons WHERE id = ?";
     private static final String READ_PERSON_BY_USERNAME_QUERY=
@@ -82,8 +84,8 @@ public class PersonDao {
         return person;
     }
 
-    public void update(Person person) throws IOException {
 
+    public void update(Person person) throws IOException {
         try (PreparedStatement statement = dao.connect().prepareStatement(UPDATE_PERSON_QUERY)) {
             statement.setInt(6, person.getId());
             statement.setString(1, person.getLogin());
@@ -91,7 +93,6 @@ public class PersonDao {
             statement.setString(3, person.getEmail());
             statement.setString(4, person.getAnotherContact());
             statement.setInt(5, person.getPermission());
-
             statement.executeUpdate();
         } catch (Exception e) {
             FoundException.catchException(e);
@@ -134,5 +135,7 @@ public class PersonDao {
 
         return person;
     }
+
+
 }
 
