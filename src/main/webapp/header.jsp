@@ -9,7 +9,7 @@
 <header>
 <link href="<c:url value='/css/headerStyle.css'/>" rel="stylesheet" type="text/css" />
     <u1 class ="left-corner">
-        <li><a href="">Logo</a> </li>
+        <img src='<c:url value="/css/logo.png"></c:url>' width="70" height="70" /></a>
     </u1>
     <u1 class="right-corner">
         <li><a href="/">Home</a> </li>

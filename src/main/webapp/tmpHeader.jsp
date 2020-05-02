@@ -9,12 +9,12 @@
 <header>
 <link href="<c:url value='/css/headerStyle.css'/>" rel="stylesheet" type="text/css" />
     <u1 class ="left-corner">
-        <li><a href="">Logo</a> </li>
+         <img src='<c:url value="/css/logo.png"></c:url>' width="70" height="70" /></a> 
     </u1>
     <u1 class="right-corner">
         <li><a href="#">About Us</a> </li>
-        <form action="/app/logout" method="post">
-        <li><button id="logout" name ="logout">Logout</button></li>
+        <li><form action="/app/logout" method="post"></li>
+        <li><button class="logout" name ="logout">Logout</button></li>
     </u1>
 </header>
 </body>
