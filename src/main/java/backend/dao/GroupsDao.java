@@ -54,7 +54,6 @@ public class GroupsDao {
 
     public Groups readGroupById(int groupId) throws SQLException {
 
-
         try (PreparedStatement statement = dao.connect().prepareStatement(READ_ALL_GROUPS_BY_ID_QUERY)) {
             statement.setInt(1, groupId);
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -142,6 +141,4 @@ public class GroupsDao {
         }
     }
 
-
-    
 }

@@ -19,24 +19,26 @@
 <div id="container">
         <div id="content"></br>
             <div id="registrationStyle">
-
                     <ul>
                         <table>
                     <c:forEach items="${groups}" var="group">
                         <tr>
                              <td>
+                                 <section>
                                  <form method="post" action="/app/saveGroup">
                                      <li class="groupList">${group.name}</li></br>
                                         <input type="hidden" name="groupName" value="${group.name}">
                                         <input type="password" name="passwordGroup">
+                                        <a href="" id="popupButton" class="button">
                                         <input type="submit" value="Zapisz się."></br>
+                                        </a>
                                  </form>
+                                 </section>
                              </td>
                         </tr>
                     </c:forEach>
                         </table>
                     </ul>
-
                 <form method="post" action="/app/addGroup">
                 <table>
                     <tr>
