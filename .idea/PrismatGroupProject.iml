@@ -27,22 +27,12 @@
     </content>
     <orderEntry type="jdk" jdkName="13" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-<<<<<<< HEAD
     <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/mysql-connector-java-8.0.19.jar!/" />
-=======
-<<<<<<< HEAD
-    <orderEntry type="module-library">
-=======
-    <orderEntry type="module-library" exported="">
->>>>>>> EditUserGroup_Michal
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../mysql-connector-java-8.0.19/mysql-connector-java-8.0.19.jar!/" />
->>>>>>> master
-        </CLASSES>
+    <orderEntry type="module-library">
+      <library>
         <JAVADOC />
         <SOURCES />
       </library>
@@ -56,7 +46,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.1.14.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.1.14.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.1.14.RELEASE" level="project" />
-<<<<<<< HEAD
     <orderEntry type="library" name="Maven: org.springframework:spring-web:5.1.14.RELEASE" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:jstl:1.2" level="project" />
@@ -64,17 +53,11 @@
     <orderEntry type="library" name="Maven: org.jetbrains:annotations:19.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-core:1.2.3" level="project" />
-=======
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:jstl:1.2" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:1.2.3" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-core:1.2.3" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains:annotations:19.0.0" level="project" />
-<<<<<<< HEAD
-=======
-    <orderEntry type="library" name="Maven: org.springframework:spring-web:5.1.14.RELEASE" level="project" />
->>>>>>> EditUserGroup_Michal
->>>>>>> master
   </component>
 </module>
