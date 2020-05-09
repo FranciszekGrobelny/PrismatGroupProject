@@ -49,7 +49,7 @@ public class GroupsController {
     }
 
     @GetMapping("/addGroup")
-    public String groupList(HttpServletRequest request, Model model){
+    public String groupList(HttpServletRequest request, Model model) throws FileNotFoundException {
         List<Groups> groups = groupsDao.getAllGroups();
         model.addAttribute("groups",groups);
 
