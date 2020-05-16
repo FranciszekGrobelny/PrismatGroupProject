@@ -48,7 +48,7 @@
         <c:forEach items="${groups}" var="group">
             <tr>
                 <td><li class="groupList"><a href="/">${group.getName()}</a></li></td>
-                <td><a href="/app/delete?name=${group.name}" class="deleteGroupButton"><button >Usun grupe</button></a></td>
+                <td><a href="/app/deleteGroupFromUser?id=${group.id}" class="deleteGroupButton"><button >Usun grupe</button></a></td>
             </tr>
         </c:forEach>
             </table>

@@ -63,9 +63,10 @@ public class UserController {
         return "/app/userPage.jsp";
     }
 
-    @GetMapping("/delete")
-    public String deleteUserGroup(@RequestParam(name = "name") String name) throws FileNotFoundException {
-        groupsDao.delete(name);
+    @GetMapping("/deleteGroupFromUser")
+    public String deleteGroupFromUser(@RequestParam(name = "id") int id) throws FileNotFoundException, SQLException {
+        System.out.println("------------------------------------------>"+groupsDao.readGroupById(id));
+        userGroupsDao.deleteByGroupsId(id);
         return "redirect:/app/userPage";
     }
 

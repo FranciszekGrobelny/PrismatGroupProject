@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Controller
@@ -81,7 +82,7 @@ public class GroupsController {
         }else {
             exceptions = exceptionsDao.getExceptions("MemberOfGroup");
         }
-        exceptionCookie = new Cookie("exceptionCookie", URLEncoder.encode( exceptions.getExceptionDescription(), "UTF-8" ));
+        exceptionCookie = new Cookie("exceptionCookie", URLEncoder.encode( exceptions.getExceptionDescription(), StandardCharsets.UTF_8));
         loginCookie.setPath("/");
         response.addCookie(exceptionCookie);
         response.sendRedirect("/app/messageSaveGroup");

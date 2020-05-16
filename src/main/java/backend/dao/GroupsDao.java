@@ -129,18 +129,18 @@ public class GroupsDao {
         }
     }
 
-    public void delete(String groupsName) throws FileNotFoundException {
-        try (PreparedStatement statement = dao.connect().prepareStatement(DELETE_GROUPS_QUERY)) {
-            statement.setString(1, groupsName);
-            statement.executeUpdate();
-
-            boolean deleted = statement.execute();
-            if (!deleted) {
-                throw new NotFoundException("Product not found");
-            }
-        } catch (Exception e) {
-            FoundException.catchException(e);
-        }
-    }
+//    public void delete(String groupsName) throws FileNotFoundException {
+//        try (PreparedStatement statement = dao.connect().prepareStatement(DELETE_GROUPS_QUERY)) {
+//            statement.setString(1, groupsName);
+//            statement.executeUpdate();
+//
+//            boolean deleted = statement.execute();
+//            if (!deleted) {
+//                throw new NotFoundException("Product not found");
+//            }
+//        } catch (Exception e) {
+//            FoundException.catchException(e);
+//        }
+//    }
 
 }
