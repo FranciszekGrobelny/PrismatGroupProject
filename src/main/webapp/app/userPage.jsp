@@ -10,8 +10,8 @@
 </head>
 <body>
 <div>
- <%@include file="../tmpHeader.jsp" %>
- </div>
+    <%@include file="../tmpHeader.jsp" %>
+</div>
 <div id="allPage">
     <div id="userInfos">
         <img id="userLogo" src="css/noUserLogo.png">
@@ -21,45 +21,40 @@
         <p> Email: ${personData.email}</p>
         <p> Another Contact: ${personData.anotherContact}</p>
         <p> Lecturer Status: ${personData.permission}</p>
-
-<form action="/app/userPage" method="post">
-   <table>
-                     <tr>
-                        <td><p>Email:</p></td>            <td><input type="email"  placeholder="Enter your email" name="email" ></td>
-                     </tr>
-                     <tr>
-                        <td><p>Another contact:</p></td>  <td><input type="text"  placeholder="Email or phone number" name="anotherContact"> </td>
-                     </tr>
-                     <tr>
-                        <td><p>Password:</p></td>         <td><input type="password" name="password" placeholder="Enter your password" ></td>
-                     </tr>
-
-                  </table></br>
-                    <button id="editButton" name ="editButton">Edit</button>
-                  </form>
- </div>
-
-
-    <div class="groups">
-        <img id="groupLogo" src="css/groupLogo.png">
-        <p class="textNearImage">Grupy zajęciowe:</p>
-        <ul>
-            <table>
-        <c:forEach items="${groups}" var="group">
+    <form action="/app/userPage" method="post">
+        <table>
             <tr>
-                <td><li class="groupList"><a href="/app/streamPage">${group.getName()}</a></li></td>
-                <td><a href="/app/delete?name=${group.name}" class="deleteGroupButton"><button >Usun grupe</button></a></td>
+                <td><p>Email:</p></td>            <td><input type="email"  placeholder="Enter your email" name="email" ></td>
             </tr>
-        </c:forEach>
-            </table>
-        </ul>
-        <a href="/app/addGroup" id="addGroupButton"><button >Dodaj grupe</button></a>
-    </div>
+            <tr>
+                <td><p>Another contact:</p></td>  <td><input type="text"  placeholder="Email or phone number" name="anotherContact"> </td>
+            </tr>
+            <tr>
+                <td><p>Password:</p></td>         <td><input type="password" name="password" placeholder="Enter your password" ></td>
+            </tr>
+        </table></br>
+        <button id="editButton" name ="editButton">Edit</button>
+   </form>
+   </div>
+       <div class="groups">
+           <img id="groupLogo" src="css/groupLogo.png">
+           <p class="textNearImage">Grupy zajęciowe:</p>
+           <ul>
+               <table>
+           <c:forEach items="${groups}" var="group">
+               <tr>
+                   <td><li class="groupList"><a href="/app/streamPage">${group.getName()}</a></li></td>
+                   <td><a href="/app/delete?name=${group.name}" class="deleteGroupButton"><button>Usun grupe</button></a></td>
+               </tr>
+           </c:forEach>
+               </table>
+           </ul>
+           <a href="/app/addGroup" id="addGroupButton"><button >Dodaj grupe</button></a>
+       </div>
+   </div>
 </div>
-
-<%--<script src="main/webapp/js/userPage.js"></script>--%>
+<div>
+    <%@include file="../footer.jsp" %>
 </div>
-        <%@include file="../footer.jsp" %>
-     </div>
 </body>
 </html>

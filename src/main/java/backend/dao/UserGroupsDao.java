@@ -32,6 +32,8 @@ public class UserGroupsDao {
             "SELECT * FROM usergroups WHERE userId=?";
     private static final String READ_USERGROUPS_BY_GROUPSID_QUERY=
             "SELECT * FROM usergroups WHERE groupsId=?";
+    private static final String READ_ALL_PARTICIPANTS_BY_GROUPID=
+            "SELECT userId FROM usergroups WHERE groupsId=?";
 
     public UserGroups create(UserGroups userGroups) throws FileNotFoundException {
 
@@ -119,6 +121,23 @@ public class UserGroupsDao {
         } catch (Exception e) {
             FoundException.catchException(e);
         }
+    }
+
+    public List<Integer> getAllParticipants(int groupsId) throws FileNotFoundException {
+        List<Integer> participantsList = new ArrayList<>();
+
+        try (PreparedStatement statement = dao.connect().prepareStatement(READ_ALL_PARTICIPANTS_BY_GROUPID)) {
+            statement.setInt(1, groupsId);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    participantsList.add(resultSet.getInt("userId"));
+                }
+            }
+        } catch (Exception e) {
+            FoundException.catchException(e);
+        }
+
+        return participantsList;
     }
 }
 
