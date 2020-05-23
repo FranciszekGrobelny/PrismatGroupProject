@@ -5,10 +5,10 @@ import backend.dao.PersonDao;
 import backend.dao.UserGroupsDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.FileNotFoundException;
 
 @Controller
@@ -19,22 +19,19 @@ public class WebRtcController {
     GroupsDao groupsDao;
     PersonDao personDao;
 
-
-    @PostMapping("/streamPage")
-    @ResponseBody
-    public void checkIdOfGroup(@RequestParam(name = "name") String name,
-                               HttpServletResponse response){
-        
-
-    }
+//    @PostMapping("/streamPage")
+//    @ResponseBody
+//    public void checkIdOfGroup(@RequestParam(name = "name") String name,
+//                               HttpServletResponse response){
+//
+//
+//    }
 
     @GetMapping("/streamPage")
     public String getStreamPage(HttpServletRequest request, Model model) throws FileNotFoundException {
 
-        var allParticipants = userGroupsDao.getAllParticipants(1);
+//        var allParticipants = userGroupsDao.getAllParticipants(1);
 
         return "/app/streamPage.jsp";
     }
-
-
 }

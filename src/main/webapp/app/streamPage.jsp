@@ -56,20 +56,7 @@
             </div>
         </div>
         <div id="streamWindow"></br>
-            <div>
-                <video id="video1" playsinline autoplay muted></video>
-                <video id="video2" playsinline autoplay></video>
-                <video id="video3" playsinline autoplay></video>
-                <div>
-                    <button id="startButton">Start</button>
-                    <button id="callButton">Call</button>
-                    <button id="hangupButton">Hang Up</button>
-                </div>
-            </div>
-            <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-            <script src="js/main.js" async></script>
-            <script src="../../../js/lib/ga.js"></script>
-        </div>
+
     </div>
     <%@include file="../footer.jsp" %>
 </div>
