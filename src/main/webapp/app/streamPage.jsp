@@ -59,7 +59,7 @@
         <div id="streamWindow"></br>
             <video id="localVideo" autoplay muted></video>
             <video id="remoteVideo" autoplay></video>
-            <script src="../script.js"></script>
+            <script src="js/script.js"></script>
         </div>
     </div>
     <%@include file="../footer.jsp" %>
