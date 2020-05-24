@@ -22,7 +22,7 @@
         <p> Another Contact: ${personData.anotherContact}</p>
         <p> Lecturer Status: ${personData.permission}</p>
 
-<form action="/app/userPage" method="post">
+<form action="/app/userPageEdit" method="post">
    <table>
                      <tr>
                         <td><p>Email:</p></td>            <td><input type="email"  placeholder="Enter your email" name="email" ></td>
@@ -35,7 +35,7 @@
                      </tr>
 
                   </table></br>
-                    <button id="editButton" name ="editButton">Edit</button>
+                    <input type="submit" name="Edytuj">
                   </form>
  </div>
 

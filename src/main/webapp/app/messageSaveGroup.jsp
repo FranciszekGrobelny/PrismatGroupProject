@@ -19,7 +19,7 @@
 <div class="bg-modal">
     <div class="modal-content">
         <form method="post" action="/app/messageSaveGroup">
-            </br>${exceptions}</br></br>
+            ${exceptions}</br>
             <input type="submit" value="OK">
         </form>
     </div>

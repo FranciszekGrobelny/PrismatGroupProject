@@ -65,7 +65,7 @@ public class UserController {
 
     @GetMapping("/deleteGroupFromUser")
     public String deleteGroupFromUser(@RequestParam(name = "id") int id) throws FileNotFoundException, SQLException {
-        System.out.println("------------------------------------------>"+groupsDao.readGroupById(id));
+
         userGroupsDao.deleteByGroupsId(id);
         return "redirect:/app/userPage";
     }
@@ -85,7 +85,7 @@ public class UserController {
        response.sendRedirect("/app/userPage");
     }
 
-    @PostMapping("/userPage")
+    @PostMapping("/userPageEdit")
     @ResponseBody
     public void editPersonAction(@RequestParam(name = "password") String password,
                                  @RequestParam(name = "email") String email,
@@ -106,6 +106,7 @@ public class UserController {
         if (!"".equals(anotherContact)){
             person.setAnotherContact(anotherContact);
         }
+        System.out.println("-------------------"+person.toString());
         personDao.update(person);
         response.sendRedirect("/app/userPage");
     }
@@ -113,6 +114,7 @@ public class UserController {
     @ResponseBody
     public void logoutUser(HttpServletRequest request,
                              HttpServletResponse response) throws IOException {
+        System.out.println("-------------------Wylogowanie");
         Cookie deleteLoginCookie = WebUtils.getCookie(request,"loginCookie");
         System.out.printf(deleteLoginCookie.getName());
         deleteLoginCookie.setValue("");
