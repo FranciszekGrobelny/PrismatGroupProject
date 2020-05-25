@@ -13,9 +13,11 @@
 <%@include file="../tmpHeader.jsp" %>
 <div id="container">
 
+
     <div id="content"></br>
         <div id="left"></br>
             <div id="addGroup">
+
                 <form method="post" action="/app/addGroup">
                             <table>
                                 <tr>

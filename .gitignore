@@ -27,10 +27,6 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-.idea/PrismatGroupProject.iml
-.idea/artifacts/PrismatGroupProject_war_exploded.xml
-.idea/codeStyles/Project.xml
-.idea/misc.xml
 
 # Generated files
 .idea/**/contentModel.xml
