@@ -45,7 +45,6 @@ public class UserController {
                                                  // JAK BEDZIE USER_DAO
         Cookie loginCookie = WebUtils.getCookie(request,"loginCookie");
 
-
         Person person = personDao.readByLogin(loginCookie.getValue());
         List<UserGroups> usersGroupsList = userGroupsDao.readByUserId(person.getId());
         List<Groups> groups = new ArrayList<>();

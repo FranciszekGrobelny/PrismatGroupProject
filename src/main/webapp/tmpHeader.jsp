@@ -13,8 +13,8 @@
     </u1>
     <u1 class="right-corner">
         <li><a href="#">About Us</a> </li>
-        <li><form action="/app/logout" method="post"></li>
-        <li><button class="logout" name ="logout">Logout</button></li>
+        <li><form action="/app/logout" method="post">
+        <button class="logout" name ="logout">Logout</button></form></li>
     </u1>
 </header>
 </body>
