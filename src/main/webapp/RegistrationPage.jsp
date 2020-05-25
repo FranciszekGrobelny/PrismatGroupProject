@@ -6,10 +6,8 @@
 </head>
 <link rel="stylesheet" href="css/registrationPageStyle.css" type="text/css" />
 <body>
-
+ <%@include file="header.jsp" %>
      <div id="container">
-     <%@include file="header.jsp" %>
-        <div id="content"></br>
         <div id="registrationStyle">
             <h1>Registration</h1>
             <hr></br>
@@ -38,9 +36,8 @@
                     <input  type="submit" value="Register" class = "registrationButton" > </br>
                 </form>
         </div>
-        </div>
-        <%@include file="footer.jsp" %>
      </div>
 
 </body>
+<%@include file="footer.jsp" %>
 </html>

@@ -4,13 +4,22 @@ body
   	background-color: #3B3B36;
     margin: 0px;
     padding: 0px;
+
 }
 footer
 {
     clear: both;
     text-align: center;
     background: #363630;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 15px;
     color: #fff;
+    position: absolute;
+    bottom: 0;
+    width:100%
+}
+input:focus,
+textarea:focus, select:focus{
+outline: none;
 }

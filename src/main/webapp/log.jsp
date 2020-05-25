@@ -9,25 +9,23 @@
 </head>
 
 <body>
-<div id="container">
 <%@include file="header.jsp" %>
-    <div id= "content">
-        <div id="login"></br>
-            <hr>
-                <h1>Login</h1>
-            <hr>
-            <h1>Prismat</h1>
-            <p>E-learning platform</h6></p></br>
-            <form action="/login" method="post">
-                Username: </br>
-                    <input type="text" name="login" placeholder="Username"></br>
-                Password: </br>
-                    <input type="password" name="password" placeholder="Password"></br></br>
-                    <input type="submit" class="LogButton" value="Sign in">
-            </form>
-        </div>
+<div id="container">
+    <div id="login"></br>
+
+          <img src='<c:url value="/css/logo.png"></c:url>' width="120" height="120" /></a>
+
+        <h1>Prismat</h1>
+        <p>E-learning platform</h6></p></br>
+        <form action="/login" method="post">
+            Username: </br>
+            <input type="text" name="login" placeholder="Username"></br>
+            Password: </br>
+            <input type="password" name="password" placeholder="Password"></br></br>
+            <input type="submit" class="LogButton" value="Login">
+        </form>
     </div>
-    <%@include file="footer.jsp" %>
 </div>
+<%@include file="footer.jsp" %>
 </body>
 </html>
