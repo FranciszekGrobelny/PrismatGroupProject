@@ -12,10 +12,12 @@
          <img src='<c:url value="/css/logo.png"></c:url>' width="70" height="70" /></a> 
     </u1>
     <u1 class="right-corner">
-        <li><a href="#">About Us</a> </li>
+        <li><a href="../streamPage.jsp">Stream</a> </li>
+        <li><a href="/app/userPage">Home</a> </li>
         <li><form action="/app/logout" method="post"></li>
-        <li><button class="logout" name ="logout">Logout</button></li>
+        <li><button class="logout" name ="logout">Logout</button></li></form>
     </u1>
+
 </header>
 </body>
 </html>

@@ -1,53 +1,59 @@
-body
-{
+body{
 	font-family: Arial;
 	background-attachment: fixed;
-    background-color: red;
 	font-size: 20px;
 	color: #FFFFFF;
 	font-family: 'Lato';
 }
 
-#container
-{
+#container{
 	width:1200px;
-    height: 720px;
+    height: 612px;
 	margin: centre;
 	margin-left: auto;
     margin-right: auto;
 }
 
-#content
-{
-	width:1200px;
-	height: 612px;
-}
 p.a{
     font-size: 24px;
 }
+
 p.b{
     float: left;
 }
+
 p.c{
     float: left;
     position: relative;
     margin-top: -20px;
 }
-#welcome
-{
+
+a.registration{
+    position: relative;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+a.signin{
+    position: relative;
+    margin-top: -45px;
+    margin-left: 280px;
+}
+
+#welcome{
 	color: #E9E6E5;
 	background-color: #353535;
 	width: 550px ;
-	height: 400px ;
+	height: 350px ;
 	padding: 20px;
 	position: relative;
     margin: auto;
-    top: 36px;
+    top: 110px;
 	text-align: center;
 	font-family: 'Lato';
 }
-.LogButton
-{
+
+.LogButton{
      background-color:#353535;
      border-radius:18px;
      border: 1px solid #ad60b6;
@@ -60,6 +66,12 @@ p.c{
      font-family: 'Lato';
      margin: 5px;
 }
+
 .LogButton:hover {
 	background-color:#d570e0;
+}
+
+input:focus,
+textarea:focus, select:focus{
+outline: none;
 }

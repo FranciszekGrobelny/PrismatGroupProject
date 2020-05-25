@@ -8,16 +8,13 @@ body
 #container
 {
 	width:1200px;
-	height: 720px;
+	height: 612px;
 	margin: centre;
 	margin-left: auto;
     margin-right: auto;
+      width:100%
 }
-#content
-{
-	width:1200px;
-	height: 612px;
-}
+
 hr{
     background-color:#ad60b6;
     height:3px;
@@ -29,7 +26,7 @@ hr{
 	color: #E9E6E5;
 	background-color: #353535;
 	width: 350px ;
-	height: 500px ;
+	height: 480px;
 	padding: 20px;
 	position: relative;
     margin: auto;
@@ -72,4 +69,8 @@ p {
   font-size: 17px;
   position: relative;
   margin-top: -35px;
+}
+input:focus,
+textarea:focus, select:focus{
+outline: none;
 }

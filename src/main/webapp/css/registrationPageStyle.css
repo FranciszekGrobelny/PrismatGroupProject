@@ -1,5 +1,4 @@
-body
-{
+body{
     background-attachment: fixed;
 	background-color: #3B3B36;
 	font-size: 20px;
@@ -7,32 +6,27 @@ body
 	font-family: 'Lato';
 }
 
-#container
-{
+#container{
 	width:1200px;
-    height: 720px;
-	margin: centre;
+    height: 612px;
 	margin-left: auto;
     margin-right: auto;
 }
-#content
-{
-	width:1200px;
-	height: 612px;
-}
-#registrationStyle
-{
+
+#registrationStyle{
 	color: #E9E6E5;
 	background-color: #353535;
-	width: 420px ;
-	height: 450px ;
+	width: 420px;
+	height: 450px;
 	padding: 50px;
-	margin: 150px auto;
 	text-align: center;
 	position: relative;
-    margin: auto;
-    top: 19px;
+    margin-top:0px;
+    margin-left: auto;
+    margin-right: auto;
+    top:31px;
 }
+
 .registrationButton{
     background-color:#ad60b6;
     border-radius:28px;
@@ -45,12 +39,12 @@ body
     font-family: 'Lato';
     float: center;
 }
+
 .registrationButton:hover {
     background-color:#d570e0;
 }
 
 input{
-
     margin: 0 10 0 10px;
     background-color: #343333;
     color: #d6cccb;
@@ -64,11 +58,12 @@ input{
     text-align: center;
     font-family: 'Lato';
 }
+
 p{
-float:right;
-position: relative;
-margin-top: 0px;
-margin-bottom: -2px;
+    float:right;
+    position: relative;
+    margin-top: 0px;
+    margin-bottom: -2px;
 }
 
 hr{
@@ -78,4 +73,8 @@ hr{
     border:#ad60b6;
     position: relative;
     margin-top: -20px;
+}
+input:focus,
+textarea:focus, select:focus{
+outline: none;
 }

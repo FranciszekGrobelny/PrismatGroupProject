@@ -1,0 +1,178 @@
+
+body{
+    height: 100%;
+    background-color: #3b3b36;
+}
+
+#container
+{
+	width:1200px;
+    height: 612px;
+	margin: centre;
+	margin-left: auto;
+    margin-right: auto;
+}
+#content
+{
+	width:1200px;
+	height: 612px;
+	float:left;
+}
+#left
+{
+	color: #E9E6E5;
+    	width: 600px ;
+    	height: 612px;
+        float:left;
+        position: relative;
+        margin-top: -19px ;
+}
+#right
+{
+	color: #E9E6E5;
+    	width: 600px ;
+    	height: 612px;
+        float:left;
+        position: relative;
+        margin-top: -19px ;
+}
+#addGroup
+{
+	color: #E9E6E5;
+	width: 400px ;
+	height: 180px;
+	text-align: center;
+    padding: 20px;
+	position: relative;
+    margin-top: 150px;
+    margin-left: 150px;
+    float:left;
+    border-style: solid;
+    border-color: #666166;
+    border-width: 3px;
+    border-radius: 5px;
+    background-color: #3c3c3c;
+
+}
+#createdGroups
+{
+	color: #E9E6E5;
+	width: 500px ;
+	height: 500px;
+	text-align: center;
+	position: relative;
+    margin-top: 40px;
+    margin-left: 10px;
+    float:left;
+    border-style: solid;
+    border-color: #666166;
+    border-width: 3px;
+    border-radius: 5px;
+    background-color: #3c3c3c;
+}
+
+table{
+
+    width: 400px ;
+    height: 40px;
+}
+
+.addButton{
+
+    border:#ad60b6;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:18px;
+    padding:12px 38px;
+    font-family: 'Lato';
+    float: center;
+    background-color:#353535;
+    border-radius:12px;
+    border: 1px solid #ad60b6;
+    cursor:pointer;
+    color:#ffffff;
+    text-shadow:0px 1px 0px #000000;
+    text-align: center;
+    width:150px;
+    height:40px;
+}
+.addButton:hover {
+    background-color:#d570e0;
+}
+
+input{
+
+    margin: 0 10 0 10px;
+    background-color: #343333;
+    color: #d6cccb;
+    border-radius:10px;
+    border: 1px solid #ad60b6;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:18px;
+    padding:3px 20px;
+    text-shadow:0px 1px 0px #000000;
+    text-align: center;
+    font-family: 'Lato';
+
+}
+p{
+float:right;
+position: relative;
+margin-top: 0px;
+margin-bottom: -2px;
+}
+
+
+.groups{
+    border-style: solid;
+    border-color: #666166;
+    border-width: 3px;
+    border-radius: 5px;
+    background-color: #3c3c3c;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    color: #D2D2D1;
+}
+a:visited{
+    color: #D2D2D1;
+}
+#groupLogo{
+
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 8px;
+}
+.textNearImage{
+    margin: 30px;
+    position: relative;
+    float: right;
+    right: 90px;
+}
+.deleteGroupButton{
+    position: relative;
+    float: right;
+    margin: 8px;
+}
+#addGroupButton{
+    margin: 8px auto;
+    display: flex;
+    position: relative;
+}
+.groupList{
+    margin: 8px;
+}
+.groupList:hover{
+    color: #AE60B6;
+}
+
+.td{
+width:200px;
+}
+input:focus,
+textarea:focus, select:focus{
+outline: none;
+}

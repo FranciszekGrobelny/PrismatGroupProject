@@ -1,0 +1,137 @@
+body
+{
+	background-color: #3B3B36;
+	font-size: 15px;
+	color: #FFFFFF;
+	font-family: 'Lato';
+}
+#container
+{
+	width:1200px;
+	height: 720px;
+	margin: centre;
+	margin-left: auto;
+    margin-right: auto;
+
+}
+
+#content
+{
+	width:1200px;
+	height: 612px;
+	float: left;
+
+}
+#info
+{
+	width:200px;
+	height: 612px;
+	float: left;
+
+}
+
+#course
+{
+	position: relative;
+    margin: 5px 5px 10px 5px;
+	text-align: center;
+	width:180px;
+    height: 235px;
+    border-style: solid;
+    border-color: #666166;
+    border-width: 3px;
+    border-radius: 5px;
+    background-color: #3c3c3c;
+    color: #D2D2D1;
+    clear:both;
+
+}
+#onlineStudents
+{
+	width:180px;
+    height: 340px;
+
+    text-align: center;
+    position: relative;
+    margin: 5px 5px 10px 5px;
+    border-style: solid;
+    border-color: #666166;
+    border-width: 3px;
+    border-radius: 5px;
+    background-color: #3c3c3c;
+    color: #D2D2D1;
+    clear:both;
+
+}
+#streamWindow
+{
+	width:980px;
+    height: 592px;
+    float: left;
+    text-align: center;
+    position: relative;
+    margin: 5px 5px 10px 5px;
+
+    border-style: solid;
+    border-color: #666166;
+    border-width: 3px;
+    border-radius: 5px;
+    background-color: #3c3c3c;
+    color: #D2D2D1;
+
+}
+#courseList
+{
+	    background-color:#353535;
+       	border-radius:10px;
+       	border: 1px solid #ad60b6;
+       	cursor:pointer;
+       	color:#ffffff;
+       	font-size:18px;
+       	padding:6px 20px;
+       	text-shadow:0px 1px 0px #000000;
+       	text-align: center;
+       	font-family: 'Lato';
+
+}
+#studentsList
+{
+	    background-color:#353535;
+       	border-radius:10px;
+       	border: 1px solid #ad60b6;
+       	cursor:pointer;
+       	color:#ffffff;
+       	font-size:18px;
+       	padding:6px 10px;
+       	text-shadow:0px 1px 0px #000000;
+       	text-align: center;
+       	font-family: 'Lato';
+
+}
+.joinToStream
+{
+    background-color:#ad60b6;
+	border-radius:28px;
+	border:#ad60b6;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:18px;
+	padding:8px 18px;
+    font-family: 'Lato';
+}
+.joinToStream:hover {
+	background-color:#d570e0;
+}
+hr{
+    background-color:#ad60b6;
+    height:3px;
+    width:70%;
+    border:#ad60b6;
+    position: relative;
+    margin-top: -15px;
+}
+input:focus,
+textarea:focus, select:focus{
+outline: none;
+}
