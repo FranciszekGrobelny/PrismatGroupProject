@@ -38,7 +38,6 @@ public class GroupsController {
     }
 
     @PostMapping("/addGroup")
-    @ResponseBody
     public void addGroupAction(@RequestParam(name = "name") String name,
                                @RequestParam(name = "description") String description,
                                @RequestParam(name = "maxNumberOfPlaces") int maxNumber,
@@ -58,7 +57,6 @@ public class GroupsController {
     }
 
     @PostMapping("/saveGroup")
-    @ResponseBody
     public void saveGroup(@RequestParam("groupName") String groupName,
                           @RequestParam("passwordGroup") String passwordGroup,
                           Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {

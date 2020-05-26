@@ -34,7 +34,6 @@ public class StartPageController {
     }
 
     @PostMapping("/login")
-    @ResponseBody
     public void checkLogin(@RequestParam("login") String login,
                            @RequestParam("password") String password,
                            HttpServletResponse response) throws IOException {
@@ -54,7 +53,6 @@ public class StartPageController {
     }
 
     @PostMapping("/registrationPageAction")
-    @ResponseBody
     public void checkRegistration(@RequestParam("login") String login,
                                   @RequestParam("email") String email,
                                   @RequestParam(value = "anotherContact", required = false) String anotherContact,

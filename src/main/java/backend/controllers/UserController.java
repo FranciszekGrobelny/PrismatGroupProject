@@ -74,7 +74,6 @@ public class UserController {
     public String addGroup(){ return "/app/addGroup.jsp"; }
 
     @PostMapping("/add")
-    @ResponseBody
     public void addGroupAction(@RequestParam(name = "name") String name,
                                @RequestParam(name = "description") String description,
                                @RequestParam(name = "maxNumberOfPlaces") int maxNumber,
@@ -86,7 +85,6 @@ public class UserController {
     }
 
     @PostMapping("/userPageEdit")
-    @ResponseBody
     public void editPersonAction(@RequestParam(name = "password") String password,
                                  @RequestParam(name = "email") String email,
                                  @RequestParam(name = "anotherContact") String anotherContact,
@@ -111,7 +109,6 @@ public class UserController {
         response.sendRedirect("/app/userPage");
     }
     @PostMapping("/logout")
-    @ResponseBody
     public void logoutUser(HttpServletRequest request,
                              HttpServletResponse response) throws IOException {
         System.out.println("-------------------Wylogowanie");
