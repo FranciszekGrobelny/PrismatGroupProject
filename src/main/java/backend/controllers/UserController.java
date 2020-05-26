@@ -30,21 +30,22 @@ import java.util.List;
 @RequestMapping("/app")
 public class UserController {
 
-    GroupsDao groupsDao;
+    private GroupsDao groupsDao;
+    private UserGroupsDao userGroupsDao;
+    private PersonDao personDao;
 
-    UserGroupsDao userGroupsDao;
-    PersonDao personDao;
     public UserController(GroupsDao groupsDao, UserGroupsDao userGroupsDao,PersonDao personDao){
         this.personDao = personDao;
         this.groupsDao = groupsDao;
         this.userGroupsDao = userGroupsDao;
-
     }
-    @GetMapping("/userPage") 
-    public String userPage(HttpServletRequest request, Model model ) throws SQLException, FileNotFoundException {
-                                                 // JAK BEDZIE USER_DAO
-        Cookie loginCookie = WebUtils.getCookie(request,"loginCookie");
 
+    @GetMapping("/userPage") 
+    public String userPage(HttpServletRequest request,
+                           Model model ) throws SQLException, FileNotFoundException {
+
+        Cookie loginCookie = WebUtils.getCookie(request,"loginCookie");
+        assert loginCookie != null;
         Person person = personDao.readByLogin(loginCookie.getValue());
         List<UserGroups> usersGroupsList = userGroupsDao.readByUserId(person.getId());
         List<Groups> groups = new ArrayList<>();

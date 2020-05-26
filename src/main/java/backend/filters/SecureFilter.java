@@ -19,19 +19,13 @@ public class SecureFilter implements Filter {
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
 
-        PersonDao personDao = new PersonDao();
         try {
-            Cookie loginCookie = WebUtils.getCookie((HttpServletRequest) req,"loginCookie");
-            System.out.println("----------------------------filtr login = "+loginCookie.getValue());
-            Person person = personDao.readByLogin(loginCookie.getValue());
-            if (person == null) {
-                System.out.println("----------------------------filtr person = "+person.toString());
-                ((HttpServletResponse)resp).sendRedirect("/login");
-            } else {
-                chain.doFilter(req, resp);
-            }
+            WebUtils.getCookie((HttpServletRequest) req,"loginCookie").getValue();
+            chain.doFilter(req, resp);
+
         }catch(NullPointerException ex){
             ex.getMessage();
+            ((HttpServletResponse)resp).sendRedirect("/login");
         }
     }
 
