@@ -1,9 +1,10 @@
 package backend.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.ToString;
 
-@Data @ToString
+@Data @ToString @AllArgsConstructor
 public class Groups {
     private int id;
     private String name;
@@ -19,15 +20,4 @@ public class Groups {
         this.maxNumberOfPlaces = maxNumberOfPlaces;
         this.passwordGroup = passwordGroup;
     }
-
-    public Groups(int id, String name, String description, int maxNumberOfPlaces, String passwordGroup){
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.maxNumberOfPlaces = maxNumberOfPlaces;
-        this.passwordGroup = passwordGroup;
-    }
-
-
-
 }

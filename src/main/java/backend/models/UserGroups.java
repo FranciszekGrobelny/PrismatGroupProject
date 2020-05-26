@@ -1,10 +1,11 @@
 package backend.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.ToString;
 
 
-@Data @ToString(exclude = "id")
+@Data @ToString(exclude = "id") @AllArgsConstructor
 public class UserGroups {
 
     private int id;
@@ -12,12 +13,6 @@ public class UserGroups {
     private int groupsId;
 
     public UserGroups(){}
-
-    public UserGroups(int id, int userId, int groupsId){
-        this.id = id;
-        this.userId = userId;
-        this.groupsId = groupsId;
-    }
 
     public UserGroups(int userId, int groupsId){
         this.userId = userId;
