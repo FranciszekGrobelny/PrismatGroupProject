@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/streamPageStyle.css" type="text/css" />
     <title>Logowanie</title>
+    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
 </head>
 
 <body>
 <div id="container">
-<%@include file="tmpHeader.jsp" %>
+<%@include file="../tmpHeader.jsp" %>
     <div id= "content">
         <div id= "info">
             <div id="course"></br>
@@ -56,13 +57,12 @@
             </div>
         </div>
         <div id="streamWindow"></br>
-
-                            <h1>stramWindow</h1>
-
-
-                    </div>
+            <video id="localVideo" autoplay muted></video>
+            <video id="remoteVideo" autoplay></video>
+            <script src="js/script.js"></script>
+        </div>
     </div>
-    <%@include file="footer.jsp" %>
+    <%@include file="../footer.jsp" %>
 </div>
 </body>
 </html>
