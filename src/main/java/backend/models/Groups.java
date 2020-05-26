@@ -1,5 +1,9 @@
 package backend.models;
 
+import lombok.Data;
+import lombok.ToString;
+
+@Data @ToString
 public class Groups {
     private int id;
     private String name;
@@ -24,34 +28,6 @@ public class Groups {
         this.passwordGroup = passwordGroup;
     }
 
-    public int getId(){return id;}
 
-    public void setId(int anInt){this.id = id;}
-
-    public String getName(){return name;}
-
-    public void setName(String name){this.name = this.name;}
-
-    public String getDescription(){return description;}
-
-    public void setDescription(String description){this.description = this.description;}
-
-    public int getMaxNumberOfPlaces(){return maxNumberOfPlaces;}
-
-    public void setMaxNumberOfPlaces(int maxNumberOfPlaces){this.maxNumberOfPlaces = this.maxNumberOfPlaces;}
-
-    public String getPasswordGroup(){return passwordGroup;}
-
-    public void setPasswordGroup(String passwordGroup){this.passwordGroup = this.passwordGroup;}
-
-    @Override
-    public String toString() {
-        return "Groups{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", maxNumberOfPlaces='" + maxNumberOfPlaces + '\'' +
-                ", maxNumberOfPlaces='" + passwordGroup + '\'' +
-                '}';
-    }
 
 }
