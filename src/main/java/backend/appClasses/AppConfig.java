@@ -10,6 +10,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class AppConfig implements WebMvcConfigurer {
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         StringHttpMessageConverter stringConverter = new StringHttpMessageConverter();
         stringConverter.setSupportedMediaTypes(Arrays.asList(new MediaType("text", "plain",
-                Charset.forName("UTF-8"))));
+                StandardCharsets.UTF_8)));
         converters.add(stringConverter);
     }
 

@@ -12,10 +12,11 @@
          <img src='<c:url value="/css/logo.png"></c:url>' width="70" height="70" /></a> 
     </u1>
     <u1 class="right-corner">
-        <li><button class="logout"><a href="#">About Us</a></button></li>
+        <li><a href="#">About Us</a> </li>
         <li><button class="logout"><a href="/app/userPage">Profile</a></button></li>
-        <li><form action="/app/logout" method="post"></li>
-        <li><button class="logout" name ="logout">Logout</button></li></form>
+        <li><form action="/app/logout" method="post">
+        <button class="logout" name ="logout">Logout</button></form></li>
+
     </u1>
 
 </header>

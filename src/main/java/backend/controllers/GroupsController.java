@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Controller
@@ -38,7 +39,6 @@ public class GroupsController {
     }
 
     @PostMapping("/addGroup")
-    @ResponseBody
     public void addGroupAction(@RequestParam(name = "name") String name,
                                @RequestParam(name = "description") String description,
                                @RequestParam(name = "maxNumberOfPlaces") int maxNumber,
@@ -58,7 +58,6 @@ public class GroupsController {
     }
 
     @PostMapping("/saveGroup")
-    @ResponseBody
     public void saveGroup(@RequestParam("groupName") String groupName,
                           @RequestParam("passwordGroup") String passwordGroup,
                           Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -82,7 +81,7 @@ public class GroupsController {
         }else {
             exceptions = exceptionsDao.getExceptions("MemberOfGroup");
         }
-        exceptionCookie = new Cookie("exceptionCookie", URLEncoder.encode( exceptions.getExceptionDescription(), "UTF-8" ));
+        exceptionCookie = new Cookie("exceptionCookie", URLEncoder.encode( exceptions.getExceptionDescription(), StandardCharsets.UTF_8));
         loginCookie.setPath("/");
         response.addCookie(exceptionCookie);
         response.sendRedirect("/app/messageSaveGroup");

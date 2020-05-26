@@ -30,22 +30,22 @@ import java.util.List;
 @RequestMapping("/app")
 public class UserController {
 
-    GroupsDao groupsDao;
+    private GroupsDao groupsDao;
+    private UserGroupsDao userGroupsDao;
+    private PersonDao personDao;
 
-    UserGroupsDao userGroupsDao;
-    PersonDao personDao;
     public UserController(GroupsDao groupsDao, UserGroupsDao userGroupsDao,PersonDao personDao){
         this.personDao = personDao;
         this.groupsDao = groupsDao;
         this.userGroupsDao = userGroupsDao;
-
     }
+
     @GetMapping("/userPage") 
-    public String userPage(HttpServletRequest request, Model model ) throws SQLException, FileNotFoundException {
-                                                 // JAK BEDZIE USER_DAO
+    public String userPage(HttpServletRequest request,
+                           Model model ) throws SQLException, FileNotFoundException {
+
         Cookie loginCookie = WebUtils.getCookie(request,"loginCookie");
-
-
+        assert loginCookie != null;
         Person person = personDao.readByLogin(loginCookie.getValue());
         List<UserGroups> usersGroupsList = userGroupsDao.readByUserId(person.getId());
         List<Groups> groups = new ArrayList<>();
@@ -63,9 +63,10 @@ public class UserController {
         return "/app/userPage.jsp";
     }
 
-    @GetMapping("/delete")
-    public String deleteUserGroup(@RequestParam(name = "name") String name) throws FileNotFoundException {
-        groupsDao.delete(name);
+    @GetMapping("/deleteGroupFromUser")
+    public String deleteGroupFromUser(@RequestParam(name = "id") int id) throws FileNotFoundException, SQLException {
+
+        userGroupsDao.deleteByGroupsId(id);
         return "redirect:/app/userPage";
     }
 
@@ -73,7 +74,6 @@ public class UserController {
     public String addGroup(){ return "/app/addGroup.jsp"; }
 
     @PostMapping("/add")
-    @ResponseBody
     public void addGroupAction(@RequestParam(name = "name") String name,
                                @RequestParam(name = "description") String description,
                                @RequestParam(name = "maxNumberOfPlaces") int maxNumber,
@@ -84,8 +84,7 @@ public class UserController {
        response.sendRedirect("/app/userPage");
     }
 
-    @PostMapping("/userPage")
-    @ResponseBody
+    @PostMapping("/userPageEdit")
     public void editPersonAction(@RequestParam(name = "password") String password,
                                  @RequestParam(name = "email") String email,
                                  @RequestParam(name = "anotherContact") String anotherContact,
@@ -105,13 +104,14 @@ public class UserController {
         if (!"".equals(anotherContact)){
             person.setAnotherContact(anotherContact);
         }
+        System.out.println("-------------------"+person.toString());
         personDao.update(person);
         response.sendRedirect("/app/userPage");
     }
     @PostMapping("/logout")
-    @ResponseBody
     public void logoutUser(HttpServletRequest request,
                              HttpServletResponse response) throws IOException {
+        System.out.println("-------------------Wylogowanie");
         Cookie deleteLoginCookie = WebUtils.getCookie(request,"loginCookie");
         System.out.printf(deleteLoginCookie.getName());
         deleteLoginCookie.setValue("");

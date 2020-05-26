@@ -22,31 +22,32 @@
         <p> Email: ${personData.email}</p>
         <p> Another Contact: ${personData.anotherContact}</p>
         <p> Lecturer Status: ${personData.permission}</p>
-    <form action="/app/userPage" method="post">
-        <table>
+
+<form action="/app/userPageEdit" method="post">
+   <table>
+                     <tr>
+                        <td><p>Email:</p></td>            <td><input type="email"  placeholder="Enter your email" name="email" ></td>
+                     </tr>
+                     <tr>
+                        <td><p>Another contact:</p></td>  <td><input type="text"  placeholder="Email or phone number" name="anotherContact"> </td>
+                     </tr>
+                     <tr>
+                        <td><p>Password:</p></td>         <td><input type="password" name="password" placeholder="Enter your password" ></td>
+                     </tr>
+
+                  </table></br>
+                    <input type="submit" name="Edytuj">
+                  </form>
+    </div>
+    <div class="groups">
+        <img id="groupLogo" src="css/groupLogo.png">
+        <p class="textNearImage">Grupy zajęciowe:</p>
+        <ul>
+            <table>
+        <c:forEach items="${groups}" var="group">
             <tr>
-                <td><p>Email:</p></td>            <td><input type="email"  placeholder="Enter your email" name="email" ></td>
-            </tr>
-            <tr>
-                <td><p>Another contact:</p></td>  <td><input type="text"  placeholder="Email or phone number" name="anotherContact"> </td>
-            </tr>
-            <tr>
-                <td><p>Password:</p></td>         <td><input type="password" name="password" placeholder="Enter your password" ></td>
-            </tr>
-        </table></br>
-        <button id="editButton" name ="editButton">Edit</button>
-   </form>
-   </div>
-       <div class="groups">
-           <img id="groupLogo" src="css/groupLogo.png">
-           <p class="textNearImage">Grupy zajęciowe:</p>
-           <ul>
-               <table>
-           <c:forEach items="${groups}" var="group">
-               <tr>
-                   <td><li class="groupList"><a href="/app/streamPage">${group.getName()}</a></li></td>
-                   <td><a href="/app/delete?name=${group.name}" class="deleteGroupButton"><button>Usun grupe</button></a></td>
-               </tr>
+                <td><li class="groupList"><a href="/">${group.getName()}</a></li></td>
+                <td><a href="/app/deleteGroupFromUser?id=${group.id}" class="deleteGroupButton"><button >Usun grupe</button></a></td>
            </c:forEach>
                </table>
            </ul>
