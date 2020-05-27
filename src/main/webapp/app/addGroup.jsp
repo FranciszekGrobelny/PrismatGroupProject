@@ -63,6 +63,7 @@
                                                   <th style="min-width:122px" style="max-width:123px">${group.name}</br></th>
                                                   <th ><input type="password" name="passwordGroup" ></th>
                                                   <th ><input type="submit" value="Join" style="padding:4px 30px;"></br></th>
+                                                  <input type="hidden" name="groupName" value="${group.name}">
                                                 </tr></div>
                                               </table>
 

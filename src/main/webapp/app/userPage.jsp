@@ -38,7 +38,9 @@
                   </table></br>
                     <input type="submit" name="Edytuj">
                   </form>
-    </div>
+ </div>
+
+
     <div class="groups">
         <img id="groupLogo" src="css/groupLogo.png">
         <p class="textNearImage">Grupy zajęciowe:</p>
@@ -46,7 +48,7 @@
             <table>
         <c:forEach items="${groups}" var="group">
             <tr>
-                <td><li class="groupList"><a href="/">${group.getName()}</a></li></td>
+                <td><li class="groupList"><a href="/app/streamPage">${group.getName()}</a></li></td>
                 <td><a href="/app/deleteGroupFromUser?id=${group.id}" class="deleteGroupButton"><button >Usun grupe</button></a></td>
            </c:forEach>
                </table>
